@@ -1,59 +1,82 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Jacob Daniels, computer science student at Texas A&amp;M. Projects and GitHub links.">
-    <meta name="theme-color" content="#b9e7f5">
-    <title>Jacob Daniels</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Eight visual languages. An interactive collection of style tiles exploring the character of interface design."
+    />
+    <meta name="theme-color" content="#f3f1eb" />
+    <title>Eight / An interface atlas</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="art.js" defer></script>
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body class="gallery-page">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="wordmark" href="./"><span class="orb" aria-hidden="true"></span>Jacob Daniels</a>
-        <nav aria-label="Main navigation">
-          <a href="#projects">Projects</a>
-          <a href="https://github.com/jacobrdaniels">GitHub</a>
-        </nav>
-      </div>
+    <header class="gallery-masthead">
+      <a class="atlas-brand" href="./" aria-label="Eight, home"
+        ><span class="brand-symbol" aria-hidden="true">✳</span> EIGHT</a
+      ><span class="small-label">An interface atlas / Vol. 01</span
+      ><a class="quiet-link" href="#collection"
+        >The collection <span aria-hidden="true">↘</span></a
+      >
     </header>
-
-    <main id="main" class="page">
-      <section class="intro" aria-labelledby="intro-title">
-        <h1 id="intro-title">Jacob Daniels</h1>
-        <p>I’m studying computer science at Texas A&amp;M.</p>
+    <main id="main">
+      <section class="gallery-intro">
+        <div>
+          <p class="eyebrow">A study in visual character</p>
+          <h1>Same elements.<br />Eight different <em>worlds.</em></h1>
+        </div>
+        <div class="gallery-intro-note">
+          <span class="intro-asterisk" aria-hidden="true">✳</span>
+          <p>What makes an interface feel like itself?</p>
+          <p>
+            Eight answers, from liquid glass to photocopied paper. Open a
+            specimen. Press the buttons. Get a feel for it.
+          </p>
+          <a href="#inventory"
+            >What’s in each tile? <span aria-hidden="true">↓</span></a
+          >
+        </div>
       </section>
-
-      <div class="panel-grid">
-        <section class="panel" id="projects" aria-labelledby="projects-title">
-          <h2 class="panel-title" id="projects-title"><span class="jewel" aria-hidden="true"></span>Projects</h2>
-          <div class="panel-body">
-            <article class="project">
-              <h3><a href="https://github.com/jacobrdaniels/b4gpokerbot">Poker bot</a></h3>
-              <p>A Python poker bot built with Justus and Suhas for b4g in 2025. Uses Monte Carlo hand-strength estimates and a heuristic betting strategy.</p>
-            </article>
-            <article class="project">
-              <h3><a href="https://github.com/jacobrdaniels/resnetcifar10">ResNet / CIFAR-10</a></h3>
-              <p>A learning project using PyTorch to train a residual neural network for image classification on CIFAR-10.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel" id="links" aria-labelledby="links-title">
-          <h2 class="panel-title" id="links-title"><span class="jewel" aria-hidden="true"></span>Links</h2>
-          <ul class="link-list">
-            <li><a href="https://github.com/jacobrdaniels">GitHub <span class="link-detail">jacobrdaniels</span></a></li>
-            <li><a href="https://github.com/jacobrdaniels/jacobrdaniels.github.io">Website source</a></li>
-          </ul>
-        </section>
-      </div>
-
-      <footer class="site-footer">© <span id="year">2026</span> Jacob Daniels</footer>
+      <section id="collection" aria-label="The eight styles">
+        <div class="collection-heading">
+          <h2>The collection</h2>
+          <span class="small-label">01—08 / Interactive specimens</span>
+        </div>
+        <div id="gallery" class="gallery-grid"></div>
+      </section>
+      <section id="inventory" class="inventory">
+        <p class="eyebrow">The common ground</p>
+        <h2>A little of everything.<br />Room for a point of view.</h2>
+        <p>
+          Every specimen contains the same UI ingredients. Their composition,
+          materials, typography, ornament, and behavior follow the character of
+          each style.
+        </p>
+        <ol>
+          <li>Illustration & atmosphere</li>
+          <li>Color & typography</li>
+          <li>Navigation & tabs</li>
+          <li>Buttons & link states</li>
+          <li>Inputs & selection controls</li>
+          <li>Searchable list & table</li>
+          <li>Alerts & progress</li>
+          <li>Disclosure & dialog</li>
+        </ol>
+      </section>
     </main>
-    <div class="landscape" aria-hidden="true"><div class="hill hill-back"></div><div class="hill hill-front"></div></div>
+    <footer class="gallery-footer">
+      <span>EIGHT / A personal design exploration</span
+      ><span>HTML · CSS · JavaScript</span><a href="#main">Back to top ↑</a>
+    </footer>
+    <noscript
+      ><p class="noscript-note">
+        Enable JavaScript to browse the interactive collection.
+      </p></noscript
+    >
   </body>
 </html>
