@@ -241,14 +241,6 @@ svg {
   font-family: "Courier New", monospace;
   font-size: 11px;
 }
-.directory-status {
-  display: flex;
-  justify-content: space-between;
-  padding: 7px 9px;
-  border-top: 1px solid #111;
-  font-family: "Courier New", monospace;
-  font-size: 10px;
-}
 .directory-caption {
   margin: 20px 5px;
   font-family: "Courier New", monospace;
@@ -346,46 +338,6 @@ svg {
 }
 .home-index a:hover {
   text-decoration: underline;
-}
-.margin-note {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin: 25px 0 0;
-  font-family: "Courier New", monospace;
-  font-size: 11px;
-}
-.margin-note > span {
-  font-size: 19px;
-  color: #111;
-}
-.window-status {
-  min-height: 25px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  position: relative;
-  border-top: 1px solid #111;
-  padding: 5px 31px 5px 9px;
-  font-family: "Courier New", monospace;
-  font-size: 10px;
-}
-.window-status > span:nth-child(2) {
-  margin-left: auto;
-}
-.resize-grip {
-  position: absolute;
-  right: 1px;
-  bottom: 1px;
-  width: 16px;
-  height: 16px;
-  background: repeating-linear-gradient(
-    135deg,
-    white 0 2px,
-    #111 2px 3px,
-    white 3px 4px
-  );
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
 .site-footer {
   display: flex;
@@ -536,19 +488,6 @@ svg {
   width: 22px;
   height: 22px;
 }
-.end-note {
-  text-align: center;
-  border-top: 1px solid;
-  padding-top: 25px;
-  font-family: "Courier New", monospace;
-  font-size: 12px;
-}
-.end-note > span {
-  font-size: 24px;
-}
-.end-note p {
-  margin: 10px 0 0;
-}
 .contact-list {
   margin: 28px 0;
   border-top: 1px solid;
@@ -574,26 +513,6 @@ svg {
   color: #666;
   font-family: "Courier New", monospace;
   font-size: 12px;
-}
-.contact-note {
-  display: flex;
-  align-items: start;
-  gap: 14px;
-  max-width: 480px;
-  padding: 7px 0 12px;
-}
-.note-symbol {
-  border: 2px solid;
-  min-width: 23px;
-  text-align: center;
-  font-family: Georgia, serif;
-  font-weight: bold;
-  font-size: 17px;
-}
-.contact-note p {
-  font-size: 12px;
-  line-height: 1.65;
-  margin: 0;
 }
 
 @media (min-width: 1250px) {
@@ -645,9 +564,6 @@ svg {
     padding: 13px 8px;
     font-size: 11px;
   }
-  .directory-status > span {
-    display: none;
-  }
   .nav-aside {
     font-size: 9px;
   }
@@ -696,8 +612,7 @@ svg {
     margin-bottom: 25px;
   }
   .directory-caption,
-  .disk-name,
-  .directory-status {
+  .disk-name {
     display: none;
   }
   .directory-list {
@@ -749,10 +664,6 @@ svg {
   .home-index dl > div {
     padding: 15px 0;
   }
-  .margin-note {
-    align-items: start;
-    line-height: 1.6;
-  }
   .document-heading {
     padding-bottom: 22px;
   }
@@ -779,7 +690,6 @@ svg {
   .directory-column,
   .site-footer,
   .window-bar,
-  .window-status,
   .skip-link {
     display: none;
   }
