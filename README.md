@@ -1,51 +1,34 @@
-# Eight — an interface atlas
+# Jacob Daniels — personal website
 
-Eight interactive style tiles made with plain HTML, CSS, and JavaScript. The collection explores general UI and visual character, with the same component inventory and illustration subjects across eight interpretations:
+A static personal website inspired by the original Macintosh: an icon directory, monochrome document windows, and a real portrait. Built with HTML, CSS, and a small amount of JavaScript. No build step or runtime dependencies.
 
-1. Frutiger Aero
-2. Unix / BBS
-3. Classic Macintosh / System 7
-4. Swiss International Typographic Style
-5. 1970s Technical Manual
-6. DIY Photocopy Zine
-7. Y2K Futurism
-8. Art Nouveau
+## Pages and content
 
-## Browse
+- `index.html`: welcome and portrait.
+- `about.html`: background, personal story, and three experience placeholders.
+- `projects.html`: a long project document, currently starting with the poker bot and ResNet / CIFAR-10 repositories.
+- `contact.html`: contact details and GitHub.
+- `styles.css`: shared Macintosh layout, responsive styles, and print styles.
+- `script.js`: optional profile details and the footer year.
 
-The gallery lives at `index.html`. Each full specimen has a shareable URL, such as `specimen.html?style=aero`. Use the selector or previous/next arrows to move between styles.
+Edit the page HTML directly to replace the placeholder text and images. Set `email`, `linkedin`, and `location` in `PROFILE` at the top of `script.js` when ready. Until then, LinkedIn opens its placeholder on Contact and no email address is invented. The core navigation works without JavaScript.
 
-Every specimen includes an original globe/computer/fern illustration, five copyable colors, typography, navigation, buttons and states, a form, a range slider, checkbox, switch, radio buttons, tabs, a searchable collection, a data table, progress, feedback messages, disclosures, and a real modal dialog.
+The portrait is the supplied original in `assets/jacob-portrait.jpg`. Fonts and artwork are local; the Silkscreen license is included in `assets/fonts/`.
 
-Controls work: change the illustration's saturation, reveal drawing guides, turn gentle motion on, adjust component spacing, filter/select objects, save a favorite for the current visit, replay progress, or open and dismiss a dialog. Demo choices stay in the current page; nothing is submitted to a server. Motion is off initially and respects reduced-motion preferences.
+## Local preview
 
-## Run locally
-
-No installation or build step is required. Open `index.html` directly, or run:
+Open `index.html` directly, or serve this directory:
 
 ```sh
-python -m http.server 8000
+python -m http.server 8765
 ```
 
-Then visit `http://localhost:8000`. Color copying requires a browser clipboard API in a secure context (HTTPS or localhost); other contexts show the color value as a fallback.
+Then visit `http://localhost:8765/index.html`.
 
-## Files
+## Reference material
 
-- `index.html`: collection and introductory content.
-- `specimen.html`: shared specimen entry point.
-- `script.js`: eight style descriptions, sample markup, and interactions.
-- `styles.css`: shared UI anatomy, eight individual visual treatments, responsive rules, reduced motion, and print rules.
-- `art.js`: original inline SVG illustrations, with unique gradient/pattern identifiers for every instance.
-- `assets/`: local fonts, their SIL Open Font License files, paper texture, and favicon.
+The previous eight-style gallery is preserved in `style-atlas/index.html`. The standalone Classic Macintosh reference remains outside this repository in the parent project's `classic-macintosh-reference` folder.
 
-No runtime libraries, external font services, remote images, tracking, or build tools are needed. All illustration artwork is editable vector markup. Each style has its own `.theme-*` rules.
+## Deployment
 
-## Deploy
-
-The original `.github/workflows/static.yml` is preserved. Pushes to `master` deploy the repository root to GitHub Pages using GitHub Actions.
-
-Live gallery: <https://jacobrdaniels.github.io/>
-
-## Verification
-
-Checked all eight specimens at 320, 768, and 1440 CSS pixels for horizontal overflow and clipped headings/control groups. Exercised dialog open/Escape close, search and empty results, object selection, tabs, favorites, form choices, guides, motion, and density in every theme. Also checked arrow-key tab navigation, slider keyboard input, clipboard feedback, and progress completion. These are browser checks, not a claim of exhaustive accessibility or cross-browser certification.
+The existing `.github/workflows/static.yml` deploys the repository root to GitHub Pages when `master` is pushed. Use the explicit `index.html` URL if a browser has cached the former custom-domain redirect.

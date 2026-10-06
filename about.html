@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Jacob Daniels. Computer science student at Texas A&M. A personal website with projects, background, and contact details."
+      content="About — Jacob Daniels, computer science student at Texas A&M."
     />
     <meta name="theme-color" content="#c6c6c6" />
-    <title>Jacob Daniels</title>
+    <title>About — Jacob Daniels</title>
     <link
       rel="icon"
       href="assets/favicon.svg?v=personal-1"
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles.css?v=personal-1" />
     <script src="script.js?v=personal-1" defer></script>
   </head>
-  <body class="page-home">
+  <body class="page-about">
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="desktop-bar">
       <div class="desktop-bar-inner">
@@ -62,10 +62,7 @@
           </div>
           <ul class="directory-list">
             <li>
-              <a
-                class="directory-link is-current"
-                href="index.html?v=personal-1"
-                aria-current="page"
+              <a class="directory-link" href="index.html?v=personal-1"
                 ><svg
                   class="pixel-icon"
                   viewBox="0 0 32 32"
@@ -78,12 +75,14 @@
                   <path d="M9 5h14v13H9zM12 21h8v2h-8zM3 28h26v3H3z" />
                   <path d="M11 7h10v9H11z" fill="white" />
                   <path d="M13 9h2v2h-2zM18 9h2v2h-2zM14 13h5v1h-5z" /></svg
-                ><span class="directory-label">Home</span
-                ><span class="nav-arrow" aria-hidden="true">◂</span></a
+                ><span class="directory-label">Home</span></a
               >
             </li>
             <li>
-              <a class="directory-link" href="about.html"
+              <a
+                class="directory-link is-current"
+                href="about.html"
+                aria-current="page"
                 ><svg
                   class="pixel-icon"
                   viewBox="0 0 32 32"
@@ -97,7 +96,8 @@
                     fill-rule="evenodd"
                   />
                   <path d="M12 10h7v7h-7zM10 19h11v6H10zM22 3v3h3z" /></svg
-                ><span class="directory-label">About</span></a
+                ><span class="directory-label">About</span
+                ><span class="nav-arrow" aria-hidden="true">◂</span></a
               >
             </li>
             <li>
@@ -197,80 +197,149 @@
         >
           <div class="window-bar document-titlebar">
             <span class="window-box" aria-hidden="true"></span
-            ><span class="window-title">Home</span
+            ><span class="window-title">About</span
             ><span class="window-size" aria-hidden="true"></span>
           </div>
           <div class="document-body">
-            <div class="home-intro">
-              <div class="welcome-copy">
-                <p class="document-label">A personal website</p>
-                <h1 id="page-heading">Hi, I’m<br />Jacob.</h1>
-                <p class="lead">
-                  I’m a computer science student at Texas A&amp;M.
-                </p>
-                <p>
-                  Welcome to my website. This is where I keep a little about
-                  myself and the things I’m working on.
-                </p>
-                <p class="location-line">
-                  <span class="location-dot" aria-hidden="true">⌖</span>
-                  <span data-location>Location to come</span>
-                </p>
-              </div>
-              <figure class="portrait-window">
-                <div class="photo-title">Jacob</div>
-                <img
-                  src="assets/jacob-portrait.jpg"
-                  alt="Portrait of Jacob Daniels"
-                  width="699"
-                  height="699"
-                  fetchpriority="high"
-                />
-                <figcaption>Me, for reference.</figcaption>
-              </figure>
-            </div>
-            <section class="home-index" aria-labelledby="look-around">
-              <h2 id="look-around">Have a look around.</h2>
-              <dl>
-                <div>
-                  <dt>
-                    <a href="about.html"
-                      >About me <span aria-hidden="true">→</span></a
-                    >
-                  </dt>
-                  <dd>
-                    The longer version: my story, experiences, and a few things
-                    outside of computer science.
-                  </dd>
-                </div>
-                <div>
-                  <dt>
-                    <a href="projects.html"
-                      >Things I’ve made <span aria-hidden="true">→</span></a
-                    >
-                  </dt>
-                  <dd>
-                    A growing collection of projects, experiments, and notes
-                    along the way.
-                  </dd>
-                </div>
-                <div>
-                  <dt>
-                    <a href="contact.html"
-                      >Get in touch <span aria-hidden="true">→</span></a
-                    >
-                  </dt>
-                  <dd>Where to find me elsewhere.</dd>
-                </div>
-              </dl>
+            <header class="document-heading">
+              <p class="document-label">A bit of background</p>
+              <h1 id="page-heading">About me.</h1>
+              <p class="lead">
+                I’m Jacob, a computer science student at Texas A&amp;M.
+              </p>
+            </header>
+            <section class="prose-section">
+              <h2>The longer version</h2>
+              <p>
+                There’s a longer story to put here: where I’m from, how I got
+                into computer science, and the things that have kept me
+                interested along the way.
+              </p>
+              <p>
+                For now, this space is a starting point. A few more details
+                about my background, what I’m learning, and where I’d like to go
+                next will find their way here.
+              </p>
             </section>
-            <p class="margin-note">
-              <span aria-hidden="true">✳</span> Still putting things in their
-              places. More soon.
-            </p>
+            <section class="prose-section">
+              <h2>Away from the keyboard</h2>
+              <p>
+                A little about the rest of my life will go here, too. Interests,
+                hobbies, people, places, and the things that don’t fit neatly
+                into a project description.
+              </p>
+            </section>
+            <section
+              class="experience-section"
+              aria-labelledby="experience-heading"
+            >
+              <div class="section-rule">
+                <h2 id="experience-heading">A few experiences</h2>
+                <span>Details to come</span>
+              </div>
+              <article class="experience">
+                <figure
+                  class="image-placeholder"
+                  role="img"
+                  aria-label="Experience photo placeholder"
+                >
+                  <svg
+                    viewBox="0 0 48 40"
+                    aria-hidden="true"
+                    shape-rendering="crispEdges"
+                  >
+                    <path
+                      d="M1 1h46v38H1z"
+                      fill="white"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path d="m5 33 12-15 9 11 7-8 10 12Z" fill="currentColor" />
+                    <path d="M31 7h7v7h-7z" fill="currentColor" />
+                  </svg>
+                  <figcaption>
+                    Experience photo<small>Image to come</small>
+                  </figcaption>
+                </figure>
+                <div>
+                  <p class="entry-meta">Role / organization / dates</p>
+                  <h3>Experience 01</h3>
+                  <p>
+                    A short account of the work, the people involved, and what I
+                    learned will go here.
+                  </p>
+                </div>
+              </article>
+              <article class="experience">
+                <figure
+                  class="image-placeholder"
+                  role="img"
+                  aria-label="Experience photo placeholder"
+                >
+                  <svg
+                    viewBox="0 0 48 40"
+                    aria-hidden="true"
+                    shape-rendering="crispEdges"
+                  >
+                    <path
+                      d="M1 1h46v38H1z"
+                      fill="white"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path d="m5 33 12-15 9 11 7-8 10 12Z" fill="currentColor" />
+                    <path d="M31 7h7v7h-7z" fill="currentColor" />
+                  </svg>
+                  <figcaption>
+                    Experience photo<small>Image to come</small>
+                  </figcaption>
+                </figure>
+                <div>
+                  <p class="entry-meta">Role / organization / dates</p>
+                  <h3>Experience 02</h3>
+                  <p>
+                    Room for another part of the story: a role, a class, a team,
+                    or something worth remembering.
+                  </p>
+                </div>
+              </article>
+              <article class="experience">
+                <figure
+                  class="image-placeholder"
+                  role="img"
+                  aria-label="Experience photo placeholder"
+                >
+                  <svg
+                    viewBox="0 0 48 40"
+                    aria-hidden="true"
+                    shape-rendering="crispEdges"
+                  >
+                    <path
+                      d="M1 1h46v38H1z"
+                      fill="white"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    />
+                    <path d="m5 33 12-15 9 11 7-8 10 12Z" fill="currentColor" />
+                    <path d="M31 7h7v7h-7z" fill="currentColor" />
+                  </svg>
+                  <figcaption>
+                    Experience photo<small>Image to come</small>
+                  </figcaption>
+                </figure>
+                <div>
+                  <p class="entry-meta">Role / organization / dates</p>
+                  <h3>Experience 03</h3>
+                  <p>
+                    Another experience, with a photograph and a few notes about
+                    what made it matter.
+                  </p>
+                </div>
+              </article>
+            </section>
           </div>
           <div class="window-status">
-            <span>Home</span><span>Jacob Daniels</span
+            <span>About</span><span>Jacob Daniels</span
             ><span class="resize-grip" aria-hidden="true"></span>
           </div>
         </main>
