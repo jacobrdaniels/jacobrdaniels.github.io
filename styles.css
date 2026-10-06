@@ -14,12 +14,16 @@
 }
 :root {
   --desktop-gap: 40px;
+  /* FindersKeepers uses a 16-unit pixel grid; 32px gives 2px body pixels. */
+  --body-size: 32px;
+  --small-size: 24px;
+  --title-size: 16px;
+  --heading-size: 24px;
   color: #171717;
-  background: #c6c6c6;
-  background-image: radial-gradient(#888 0.65px, transparent 0.65px);
-  background-size: 3px 3px;
+  background: #d0d0d0 url("assets/desktop-pattern.svg") repeat;
+  background-size: 4px 4px;
   font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 28px;
+  font-size: var(--body-size);
   font-synthesis: none;
 }
 * {
@@ -53,7 +57,7 @@ a:focus-visible {
 }
 p {
   margin: 0 0 14px;
-  line-height: 1.15;
+  line-height: 1;
 }
 h1,
 h2,
@@ -70,15 +74,15 @@ h3 {
   font-weight: 400;
 }
 h1 {
-  font-size: 36px;
-  line-height: 1.15;
+  font-size: var(--heading-size);
+  line-height: 1;
 }
 h2 {
-  font-size: 22px;
+  font-size: var(--heading-size);
   line-height: 1.3;
 }
 h3 {
-  font-size: 20px;
+  font-size: var(--heading-size);
   line-height: 1.3;
 }
 svg {
@@ -113,8 +117,8 @@ svg {
 }
 .window {
   background: white;
-  border: 2px solid #111;
-  box-shadow: 4px 4px 0 #111;
+  border: 1px solid #111;
+  box-shadow: 2px 2px 0 #111;
 }
 .window-bar {
   position: relative;
@@ -136,40 +140,13 @@ svg {
   padding: 2px 10px 3px;
   font-family: "Sysfont", Geneva, sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--title-size);
   line-height: 1.2;
 }
 .directory .window-title {
-  font-size: 15px;
+  font-size: var(--title-size);
   padding-left: 7px;
   padding-right: 7px;
-}
-.window-box,
-.window-size {
-  position: absolute;
-  left: 7px;
-  top: 6px;
-  height: 13px;
-  width: 13px;
-  background: white;
-  border: 1px solid #111;
-  box-shadow: 0 0 0 3px white;
-}
-.directory .window-box {
-  display: none;
-}
-.window-size {
-  left: auto;
-  right: 7px;
-}
-.window-size::after {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: -1px;
-  width: 8px;
-  height: 8px;
-  border: 1px solid;
 }
 .directory-list {
   list-style: none;
@@ -190,7 +167,7 @@ svg {
 }
 .directory-label {
   padding: 3px 4px;
-  font-size: 28px;
+  font-size: var(--small-size);
   line-height: 1;
 }
 .is-current .directory-label {
@@ -203,22 +180,31 @@ svg {
 .directory-link.is-current:hover .directory-label {
   outline-offset: 2px;
 }
-.nav-arrow {
-  margin-left: auto;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+/* A single 12px pixel arrow for every link that opens another tab. */
+.new-tab-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  margin-left: 4px;
+  vertical-align: 8px;
+  font-size: 0;
+  background: currentColor;
+  mask: url("assets/new-tab.svg") center / 12px 12px no-repeat;
 }
-.nav-aside {
+.directory-link .new-tab-indicator {
   margin-left: auto;
-  color: #595959;
-  font-size: 22px;
+}
+.site-footer .new-tab-indicator,
+.pending-value .new-tab-indicator {
+  vertical-align: 6px;
 }
 .directory-divider {
   border-top: 1px dotted #888;
   margin: 10px 5px 4px;
   padding-top: 10px;
   color: #595959;
-  font-size: 22px;
+  font-size: var(--small-size);
 }
 .document-column {
   min-width: 0;
@@ -242,10 +228,10 @@ svg {
   margin-bottom: 24px;
 }
 .welcome-copy p {
-  font-size: 28px;
+  font-size: var(--body-size);
 }
 .welcome-copy .lead {
-  font-size: 30px;
+  font-size: var(--body-size);
   margin-bottom: 18px;
 }
 .welcome-copy p:last-child {
@@ -271,7 +257,11 @@ svg {
   flex-wrap: wrap;
   gap: 8px 16px;
   padding: 17px 2px 0;
-  font-size: 22px;
+  font-size: var(--small-size);
+}
+.site-footer > * {
+  background: #d0d0d0;
+  box-shadow: 2px 0 #d0d0d0, -2px 0 #d0d0d0;
 }
 .site-footer .font-credits-link {
   margin-left: auto;
@@ -280,7 +270,7 @@ svg {
   margin-bottom: 24px;
 }
 .about-intro p {
-  font-size: 27px;
+  font-size: var(--body-size);
 }
 .about-intro p:last-child {
   margin-bottom: 0;
@@ -305,10 +295,10 @@ svg {
 }
 .experience p:last-child {
   margin-bottom: 0;
-  font-size: 26px;
+  font-size: var(--body-size);
 }
 .entry-meta {
-  font-size: 23px;
+  font-size: var(--small-size);
   color: #555;
   margin-bottom: 3px;
 }
@@ -329,13 +319,13 @@ svg {
   height: 30px;
 }
 .image-placeholder figcaption {
-  font-size: 22px;
+  font-size: var(--small-size);
   line-height: 1.05;
 }
 .image-placeholder small {
   display: block;
   color: #666;
-  font-size: 20px;
+  font-size: var(--small-size);
   margin-top: 3px;
 }
 .project-entry {
@@ -347,11 +337,11 @@ svg {
   padding-top: 28px;
 }
 .project-entry h2 {
-  font-size: 25px;
+  font-size: var(--heading-size);
   margin-bottom: 14px;
 }
 .project-entry > p {
-  font-size: 28px;
+  font-size: var(--body-size);
 }
 .project-image {
   min-height: 240px;
@@ -364,12 +354,7 @@ svg {
   padding: 5px 12px;
 }
 .repository-link {
-  font-size: 25px;
-}
-.repository-link span,
-.contact-list dd span[aria-hidden] {
-  font-family: Arial, sans-serif;
-  font-size: 15px;
+  font-size: var(--body-size);
 }
 .contact-list > div {
   display: flex;
@@ -387,16 +372,16 @@ svg {
   padding-bottom: 4px;
 }
 .contact-list dt {
-  font-size: 28px;
+  font-size: var(--body-size);
   margin-bottom: 5px;
 }
 .contact-list dd {
-  font-size: 26px;
+  font-size: var(--body-size);
   overflow-wrap: anywhere;
 }
 .pending-value {
   color: #666;
-  font-size: 24px;
+  font-size: var(--small-size);
 }
 @media (max-width: 1000px) {
   .desktop {
@@ -411,24 +396,12 @@ svg {
     grid-template-columns: minmax(0, 1fr) 180px;
     gap: 24px;
   }
-  .welcome-copy h1 {
-    font-size: 32px;
-  }
-  .welcome-copy .lead {
-    font-size: 28px;
-  }
-  .nav-aside {
-    display: none;
-  }
 }
 @media (max-width: 780px) {
   .desktop {
     padding: var(--desktop-gap) 20px 24px;
     grid-template-columns: 170px minmax(0, 1fr);
     gap: 20px;
-  }
-  .directory .window-title {
-    font-size: 14px;
   }
   .directory-list {
     padding: 9px 7px;
@@ -437,9 +410,6 @@ svg {
     gap: 4px;
     padding-left: 2px;
     padding-right: 2px;
-  }
-  .directory-label {
-    font-size: 24px;
   }
   .home-intro {
     grid-template-columns: 1fr;
@@ -467,9 +437,6 @@ svg {
     position: static;
     margin-bottom: 22px;
   }
-  .directory .window-title {
-    font-size: 16px;
-  }
   .directory-list {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -480,27 +447,14 @@ svg {
     min-height: 46px;
     gap: 8px;
   }
-  .directory-label {
-    font-size: 26px;
-  }
   .directory-divider {
     grid-column: 1 / -1;
     margin: 7px 1px 3px;
     padding-top: 7px;
-    font-size: 21px;
-  }
-  .directory-link .nav-arrow {
-    display: none;
-  }
-  .directory-link .pixel-icon {
-    width: 28px;
-    height: 28px;
+    font-size: var(--small-size);
   }
   .document-body {
     padding: 22px;
-  }
-  .welcome-copy h1 {
-    font-size: 30px;
   }
   .portrait-window {
     width: min(100%, 250px);
@@ -515,14 +469,8 @@ svg {
   .project-image {
     min-height: 190px;
   }
-  .project-entry h2 {
-    font-size: 23px;
-  }
   .contact-list > div {
     gap: 16px;
-  }
-  .site-footer {
-    font-size: 20px;
   }
 }
 @media print {
@@ -532,8 +480,6 @@ svg {
   }
   .directory-column,
   .site-footer,
-  .window-box,
-  .window-size,
   .skip-link {
     display: none;
   }
@@ -562,20 +508,5 @@ svg {
   .project-entry,
   .experience {
     break-inside: avoid;
-  }
-}
-
-@media (max-width: 580px) {
-  .directory-link[target="_blank"] {
-    gap: 5px;
-  }
-  .directory-link[target="_blank"] .directory-label {
-    padding-left: 2px;
-    padding-right: 2px;
-    font-size: 24px;
-  }
-  .directory-link .new-tab-indicator {
-    display: inline;
-    font-size: 13px;
   }
 }

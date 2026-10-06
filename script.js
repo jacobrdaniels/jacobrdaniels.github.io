@@ -26,6 +26,7 @@ function contactLink(container, href, label, newTab = false) {
     a.title = "Opens in a new tab";
     a.setAttribute("aria-label", label + " (opens in a new tab)");
     const indicator = document.createElement("span");
+    indicator.className = "new-tab-indicator";
     indicator.setAttribute("aria-hidden", "true");
     indicator.textContent = " ↗";
     a.append(indicator);
