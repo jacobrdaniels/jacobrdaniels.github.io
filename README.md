@@ -13,7 +13,7 @@ A static personal website inspired by the original Macintosh: an icon directory,
 
 Edit the page HTML directly to replace the placeholder text and images. Set `email`, `linkedin`, and `location` in `PROFILE` at the top of `script.js` when ready. Until then, LinkedIn opens its placeholder on Contact and no email address is invented. The core navigation works without JavaScript.
 
-The portrait is the supplied original in `assets/jacob-portrait.jpg`. Fonts and artwork are local. Sysfont by Alina Sava (SIL OFL 1.1) provides the Chicago-style interface lettering; FindersKeepers by Giles Booth (Creative Commons Attribution, version unspecified by its publication page) provides Geneva-style body text. Both supplied font files are unmodified. Attribution, source links, and license records are available in `fonts.html` and `assets/fonts/`. The original Sysfont license and readme are preserved exactly as supplied.
+The portrait is the supplied original in `assets/jacob-portrait.jpg`. Fonts and artwork are local. Sysfont by Alina Sava (SIL OFL 1.1) provides the Chicago-style interface lettering; FindersKeepers by Giles Booth (Creative Commons Attribution, version unspecified by its publication page) provides Geneva-style body text. Both supplied font files are unmodified. Attribution, source links, and license records are available in `attributions.txt` and `assets/fonts/`. The original Sysfont license and readme are preserved exactly as supplied.
 
 ## Local preview
 

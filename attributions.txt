@@ -1,0 +1,11 @@
+Sysfont - Alina Sava, copyright 2021
+SIL Open Font License 1.1
+https://fontsarena.com/sysfont-by-alina-sava/
+https://jacobrdaniels.github.io/assets/fonts/sysfont-OFL.txt
+
+FindersKeepers - Giles Booth
+Creative Commons Attribution
+https://www.pentacom.jp/pentacom/bitfontmaker2/gallery/?id=3809
+
+Original Chicago and Geneva typefaces: Susan Kare.
+Both font files are used unchanged.
