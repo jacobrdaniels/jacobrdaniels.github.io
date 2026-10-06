@@ -54,3 +54,27 @@ if (PROFILE.linkedin.trim()) {
     /* Keep placeholders if the profile URL is incomplete. */
   }
 }
+
+// Return to the page origin without adding a fragment entry to browser history.
+for (const link of document.querySelectorAll("[data-back-to-top]")) {
+  link.addEventListener("click", (event) => {
+    if (
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    )
+      return;
+    event.preventDefault();
+    if (window.location.hash) {
+      window.history.replaceState(
+        window.history.state,
+        "",
+        window.location.pathname + window.location.search,
+      );
+    }
+    document.body.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  });
+}
