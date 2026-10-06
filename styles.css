@@ -12,7 +12,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 :root {
   color: #171717;
   background: #c6c6c6;
@@ -25,9 +24,9 @@
 }
 body {
   margin: 0;
+  min-height: 100vh;
   background-image: radial-gradient(#888 0.65px, transparent 0.65px);
   background-size: 3px 3px;
-  min-height: 100vh;
 }
 a {
   color: inherit;
@@ -38,14 +37,17 @@ a:hover {
 }
 a:focus-visible {
   outline: 2px dotted #111;
-  outline-offset: 5px;
+  outline-offset: 4px;
 }
 ::selection {
   background: #111;
   color: white;
 }
+[hidden] {
+  display: none !important;
+}
 p {
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   line-height: 1.15;
 }
 h1,
@@ -56,28 +58,27 @@ dl,
 dd {
   margin: 0;
 }
-h1 {
+h1,
+h2,
+h3 {
   font-family: "Sysfont", Geneva, sans-serif;
   font-weight: 400;
+}
+h1 {
   font-size: 36px;
   line-height: 1.15;
-  letter-spacing: normal;
-  margin-bottom: 22px;
 }
 h2 {
-  font-size: 30px;
+  font-size: 22px;
   line-height: 1.3;
 }
 h3 {
-  font-size: 28px;
-  line-height: 1.35;
+  font-size: 20px;
+  line-height: 1.3;
 }
 svg {
   fill: currentColor;
   flex-shrink: 0;
-}
-[hidden] {
-  display: none !important;
 }
 .skip-link {
   position: fixed;
@@ -92,38 +93,9 @@ svg {
 .skip-link:focus {
   transform: translateY(0);
 }
-.desktop-bar {
-  background: white;
-  border-bottom: 2px solid #111;
-}
-.desktop-bar-inner {
-  max-width: 1164px;
-  margin: auto;
-  padding: 6px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 38px;
-}
-.site-name {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  font-weight: 400;
-  text-decoration: none;
-}
-.menu-icon {
-  width: 21px;
-  height: 21px;
-}
-.desktop-label {
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
-}
 .desktop {
   max-width: 1164px;
-  margin: 52px auto 0;
+  margin: 40px auto 0;
   padding: 0 24px 28px;
   display: grid;
   grid-template-columns: 222px minmax(0, 1fr);
@@ -132,10 +104,10 @@ svg {
 }
 .directory-column {
   position: sticky;
-  top: 28px;
+  top: 24px;
 }
 .window {
-  background: #fff;
+  background: white;
   border: 2px solid #111;
   box-shadow: 4px 4px 0 #111;
 }
@@ -156,11 +128,16 @@ svg {
 }
 .window-title {
   background: white;
-  padding: 2px 10px 4px;
+  padding: 2px 10px 3px;
   font-family: "Sysfont", Geneva, sans-serif;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.directory .window-title {
+  font-size: 15px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 .window-box,
 .window-size {
@@ -169,9 +146,12 @@ svg {
   top: 6px;
   height: 13px;
   width: 13px;
-  background: #fff;
+  background: white;
   border: 1px solid #111;
   box-shadow: 0 0 0 3px white;
+}
+.directory .window-box {
+  display: none;
 }
 .window-size {
   left: auto;
@@ -186,28 +166,16 @@ svg {
   height: 8px;
   border: 1px solid;
 }
-.disk-name {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 13px 15px 14px;
-  border-bottom: 1px solid #111;
-  font-size: 24px;
-}
-.disk-icon {
-  width: 22px;
-  height: 22px;
-}
 .directory-list {
   list-style: none;
   margin: 0;
-  padding: 12px 11px 13px;
+  padding: 10px 11px 13px;
 }
 .directory-link {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-height: 55px;
+  min-height: 53px;
   padding: 7px 5px;
   text-decoration: none;
 }
@@ -217,8 +185,8 @@ svg {
 }
 .directory-label {
   padding: 3px 4px;
-  font-weight: 400;
   font-size: 28px;
+  line-height: 1;
 }
 .is-current .directory-label {
   background: #111;
@@ -232,27 +200,20 @@ svg {
 }
 .nav-arrow {
   margin-left: auto;
-  font-size: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
 }
 .nav-aside {
   margin-left: auto;
   color: #595959;
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
 }
 .directory-divider {
-  border-top: 1px dotted #777;
-  margin: 12px 5px 4px;
-  padding-top: 12px;
+  border-top: 1px dotted #888;
+  margin: 10px 5px 4px;
+  padding-top: 10px;
   color: #595959;
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
-}
-.directory-caption {
-  margin: 20px 5px;
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.1;
+  font-size: 22px;
 }
 .document-column {
   min-width: 0;
@@ -261,138 +222,70 @@ svg {
   outline: none;
 }
 .document-body {
-  padding: 33px 34px 29px;
-}
-.document-label {
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
-  letter-spacing: normal;
-  margin-bottom: 18px;
-}
-.lead {
-  font-size: 30px;
-  line-height: 1.15;
+  padding: 26px 30px 28px;
 }
 .home-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 228px;
-  gap: 32px;
+  gap: 30px;
   align-items: start;
 }
-.welcome-copy > p:not(.lead):not(.document-label):not(.location-line) {
+.welcome-copy h1 {
+  margin-bottom: 24px;
+}
+.welcome-copy p {
   font-size: 28px;
 }
+.welcome-copy .lead {
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+.welcome-copy p:last-child {
+  margin-bottom: 0;
+}
 .portrait-window {
-  margin-top: 3px;
   border: 1px solid #111;
   padding: 3px;
-  box-shadow: 3px 3px 0 #111;
-  transform: rotate(1deg);
-}
-.photo-title {
-  text-align: center;
-  font-family: "Sysfont", Geneva, sans-serif;
-  font-size: 24px;
-  border-bottom: 1px solid;
-  padding: 2px 0 5px;
-  margin-bottom: 3px;
 }
 .portrait-window img {
   display: block;
   width: 100%;
   height: auto;
 }
-.portrait-window figcaption {
-  padding: 8px 5px 5px;
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
-}
 .location-line {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 24px;
   color: #555;
-  margin-top: 20px;
-}
-.location-dot {
-  color: #111;
-  font-size: 20px;
-}
-.home-index {
-  margin-top: 27px;
-  border-top: 2px solid #111;
-  padding-top: 20px;
-}
-.home-index h2 {
-  font-size: 28px;
-  margin-bottom: 11px;
-}
-.home-index dl > div {
-  display: grid;
-  grid-template-columns: 155px 1fr;
-  gap: 16px;
-  border-bottom: 1px dotted #999;
-  padding: 13px 0;
-  font-size: 26px;
-  line-height: 1.15;
-}
-.home-index dt {
-  font-weight: 400;
-}
-.home-index a {
-  text-decoration: none;
-}
-.home-index a:hover {
-  text-decoration: underline;
+  margin-top: 18px;
 }
 .site-footer {
   display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 17px 2px 0;
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 22px;
-}
-.document-heading {
-  border-bottom: 2px solid;
-  padding-bottom: 25px;
-  margin-bottom: 29px;
-}
-.document-heading h1 {
-  margin-bottom: 18px;
-}
-.document-heading p:last-child {
-  margin-bottom: 0;
-}
-.prose-section {
-  max-width: 610px;
-  margin-bottom: 28px;
-}
-.prose-section h2 {
-  margin-bottom: 11px;
-}
-.prose-section p,
-.project-entry > p {
-  font-size: 28px;
-}
-.section-rule {
-  display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 10px;
-  padding-bottom: 13px;
-  border-bottom: 1px solid;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 17px 2px 0;
+  font-size: 22px;
 }
-.section-rule > span {
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
+.site-footer .font-credits-link {
+  margin-left: auto;
+}
+.about-intro {
+  margin-bottom: 24px;
+}
+.about-intro p {
+  font-size: 27px;
+}
+.about-intro p:last-child {
+  margin-bottom: 0;
+}
+.section-rule {
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
 }
 .experience {
   display: grid;
-  grid-template-columns: 145px 1fr;
-  gap: 25px;
-  padding: 24px 0;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 22px;
+  padding: 20px 0;
   border-bottom: 1px dotted #888;
 }
 .experience:last-child {
@@ -400,84 +293,61 @@ svg {
   padding-bottom: 0;
 }
 .experience h3 {
-  margin: 4px 0 9px;
+  margin: 3px 0 8px;
 }
 .experience p:last-child {
   margin-bottom: 0;
   font-size: 26px;
 }
 .entry-meta {
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.15;
-  margin-bottom: 4px;
+  font-size: 23px;
   color: #555;
+  margin-bottom: 3px;
 }
 .image-placeholder {
   background: #f1f1ed;
   border: 1px solid #111;
-  min-height: 132px;
+  min-height: 112px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 16px;
-  gap: 13px;
+  padding: 12px;
+  gap: 10px;
 }
 .image-placeholder svg {
-  width: 42px;
-  height: 35px;
+  width: 36px;
+  height: 30px;
 }
 .image-placeholder figcaption {
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.15;
+  font-size: 22px;
+  line-height: 1.05;
 }
 .image-placeholder small {
   display: block;
   color: #666;
-  font-size: 22px;
+  font-size: 20px;
   margin-top: 3px;
-}
-.project-index {
-  display: flex;
-  align-items: baseline;
-  gap: 12px 24px;
-  flex-wrap: wrap;
-  padding-bottom: 24px;
-  font-size: 24px;
-}
-.project-index > span {
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
-  font-size: 24px;
 }
 .project-entry {
   scroll-margin-top: 24px;
+}
+.project-entry + .project-entry {
   border-top: 1px solid;
-  padding: 28px 0 35px;
-}
-.project-entry header {
-  display: flex;
-  align-items: start;
-  gap: 17px;
-  margin-bottom: 22px;
-}
-.entry-number {
-  border: 1px solid;
-  padding: 5px;
-  font-family: "Sysfont", Geneva, sans-serif;
-  font-size: 26px;
+  margin-top: 30px;
+  padding-top: 28px;
 }
 .project-entry h2 {
-  font-size: 30px;
+  font-size: 25px;
+  margin-bottom: 14px;
 }
-.draft-note {
-  color: #595959;
+.project-entry > p {
+  font-size: 28px;
 }
 .project-image {
-  min-height: 280px;
-  margin: 23px 0 19px;
+  min-height: 240px;
+  margin: 18px 0 14px;
   background-image: radial-gradient(#b5b5b0 0.6px, transparent 0.6px);
   background-size: 4px 4px;
 }
@@ -486,31 +356,31 @@ svg {
   padding: 5px 12px;
 }
 .repository-link {
-  display: inline-flex;
-  gap: 9px;
-  align-items: center;
-  font-size: 24px;
+  font-size: 25px;
 }
-.inline-icon {
-  width: 22px;
-  height: 22px;
-}
-.contact-list {
-  margin: 28px 0;
-  border-top: 1px solid;
+.repository-link span,
+.contact-list dd span[aria-hidden] {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
 }
 .contact-list > div {
   display: flex;
   align-items: center;
   gap: 22px;
-  padding: 23px 12px;
+  padding: 20px 0;
   border-bottom: 1px solid;
   scroll-margin-top: 25px;
 }
+.contact-list > div:first-child {
+  padding-top: 4px;
+}
+.contact-list > div:last-child {
+  border-bottom: 0;
+  padding-bottom: 4px;
+}
 .contact-list dt {
-  font-weight: 400;
   font-size: 28px;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
 }
 .contact-list dd {
   font-size: 26px;
@@ -518,109 +388,79 @@ svg {
 }
 .pending-value {
   color: #666;
-  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
   font-size: 24px;
-}
-
-@media (min-width: 1250px) {
-  .desktop {
-    margin-top: 65px;
-  }
 }
 @media (max-width: 1000px) {
   .desktop {
     grid-template-columns: 198px minmax(0, 1fr);
     gap: 24px;
+    margin-top: 28px;
   }
   .document-body {
-    padding: 27px 25px;
+    padding: 24px;
   }
   .home-intro {
-    grid-template-columns: minmax(0, 1fr) 185px;
-    gap: 23px;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    gap: 24px;
   }
-  h1 {
+  .welcome-copy h1 {
     font-size: 32px;
   }
-  .lead {
+  .welcome-copy .lead {
     font-size: 28px;
   }
-  .home-index dl > div {
-    grid-template-columns: 140px 1fr;
+  .nav-aside {
+    display: none;
   }
 }
 @media (max-width: 780px) {
   .desktop {
-    margin-top: 28px;
     padding: 0 20px 24px;
     grid-template-columns: 170px minmax(0, 1fr);
     gap: 20px;
+  }
+  .directory .window-title {
+    font-size: 14px;
   }
   .directory-list {
     padding: 9px 7px;
   }
   .directory-link {
-    gap: 5px;
+    gap: 4px;
     padding-left: 2px;
     padding-right: 2px;
   }
   .directory-label {
-    font-size: 26px;
-  }
-  .disk-name {
-    padding: 13px 8px;
     font-size: 24px;
-  }
-  .nav-aside {
-    font-size: 20px;
   }
   .home-intro {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 22px;
   }
   .portrait-window {
     width: 215px;
-    margin: 0 auto 10px;
-    transform: rotate(-1deg);
-  }
-  .home-index dl > div {
-    grid-template-columns: 1fr;
-    gap: 5px;
   }
   .experience {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100px minmax(0, 1fr);
     gap: 16px;
   }
   .experience .image-placeholder {
-    min-height: 160px;
-  }
-  .section-rule {
-    flex-wrap: wrap;
+    min-height: 104px;
+    padding: 9px;
   }
 }
 @media (max-width: 580px) {
-  .desktop-bar-inner {
-    padding: 7px 16px;
-  }
-  .desktop-label {
-    font-size: 22px;
-  }
-  .site-name {
-    font-size: 26px;
-    gap: 9px;
-  }
   .desktop {
     display: block;
-    margin-top: 21px;
+    margin-top: 18px;
     padding: 0 15px 22px;
   }
   .directory-column {
     position: static;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
   }
-  .directory-caption,
-  .disk-name {
-    display: none;
+  .directory .window-title {
+    font-size: 16px;
   }
   .directory-list {
     display: grid;
@@ -629,8 +469,8 @@ svg {
     column-gap: 14px;
   }
   .directory-link {
-    min-height: 48px;
-    gap: 10px;
+    min-height: 46px;
+    gap: 8px;
   }
   .directory-label {
     font-size: 26px;
@@ -638,10 +478,9 @@ svg {
   .directory-divider {
     grid-column: 1 / -1;
     margin: 7px 1px 3px;
-    padding-top: 8px;
-    font-size: 22px;
+    padding-top: 7px;
+    font-size: 21px;
   }
-  .nav-aside,
   .directory-link .nav-arrow {
     display: none;
   }
@@ -650,53 +489,42 @@ svg {
     height: 28px;
   }
   .document-body {
-    padding: 26px 22px;
+    padding: 22px;
   }
-  .home-intro {
-    gap: 12px;
-  }
-  h1 {
-    font-size: 32px;
-  }
-  .welcome-copy .lead {
-    max-width: 270px;
+  .welcome-copy h1 {
+    font-size: 30px;
   }
   .portrait-window {
     width: min(100%, 250px);
-    margin-top: 3px;
   }
-  .home-index {
-    margin-top: 24px;
+  .experience {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
-  .home-index dl > div {
-    padding: 15px 0;
-  }
-  .document-heading {
-    padding-bottom: 22px;
+  .experience .image-placeholder {
+    width: 120px;
   }
   .project-image {
-    min-height: 210px;
-  }
-  .project-index {
-    flex-direction: column;
-    gap: 12px;
+    min-height: 190px;
   }
   .project-entry h2 {
-    font-size: 28px;
+    font-size: 23px;
   }
   .contact-list > div {
-    padding: 22px 0;
-    gap: 17px;
+    gap: 16px;
+  }
+  .site-footer {
+    font-size: 20px;
   }
 }
 @media print {
   body {
     background: white;
   }
-  .desktop-bar,
   .directory-column,
   .site-footer,
-  .window-bar,
+  .window-box,
+  .window-size,
   .skip-link {
     display: none;
   }
@@ -710,106 +538,20 @@ svg {
     border: 0;
     box-shadow: none;
   }
+  .window-bar {
+    background: none;
+    justify-content: start;
+    border: 0;
+    margin: 0 0 12px;
+  }
+  .window-title {
+    padding: 0;
+  }
   .document-body {
     padding: 0;
   }
   .project-entry,
   .experience {
     break-inside: avoid;
-  }
-}
-
-.site-name,
-h2,
-h3 {
-  font-family: "Sysfont", Geneva, sans-serif;
-  font-weight: 400;
-}
-.site-name {
-  font-size: 17px;
-}
-h2 {
-  font-size: 22px;
-}
-h3 {
-  font-size: 20px;
-}
-.window-title {
-  font-size: 16px;
-  line-height: 1.2;
-  padding-bottom: 3px;
-}
-.photo-title {
-  font-size: 15px;
-}
-.entry-number {
-  font-size: 18px;
-}
-.home-index h2 {
-  font-size: 21px;
-}
-.project-entry h2 {
-  font-size: 25px;
-}
-.directory-label {
-  font-size: 28px;
-  line-height: 1;
-}
-.disk-name {
-  font-size: 23px;
-}
-.desktop-label {
-  font-size: 23px;
-}
-.site-footer {
-  align-items: baseline;
-  flex-wrap: wrap;
-  font-size: 22px;
-  gap: 8px 16px;
-}
-.site-footer .font-credits-link {
-  margin-left: auto;
-}
-@media (max-width: 780px) {
-  .directory-link {
-    gap: 4px;
-  }
-  .directory-label {
-    font-size: 24px;
-  }
-  .nav-aside {
-    display: none;
-  }
-}
-@media (max-width: 580px) {
-  .site-name {
-    font-size: 15px;
-  }
-  .desktop-label {
-    font-size: 20px;
-  }
-  .directory-label {
-    font-size: 26px;
-  }
-  h1 {
-    font-size: 30px;
-  }
-  .site-footer {
-    font-size: 20px;
-  }
-}
-
-.home-index dl > div {
-  grid-template-columns: 170px 1fr;
-}
-.home-index a span,
-.repository-link span,
-.contact-list dd span[aria-hidden] {
-  font-family: Arial, sans-serif;
-  font-size: 15px;
-}
-@media (max-width: 780px) {
-  .home-index dl > div {
-    grid-template-columns: 1fr;
   }
 }

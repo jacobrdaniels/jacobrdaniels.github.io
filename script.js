@@ -13,6 +13,7 @@ for (const el of document.querySelectorAll("[data-year]")) {
 if (PROFILE.location.trim()) {
   for (const el of document.querySelectorAll("[data-location]")) {
     el.textContent = PROFILE.location;
+    el.closest(".location-line").hidden = false;
   }
 }
 function contactLink(container, href, label) {
