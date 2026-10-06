@@ -180,24 +180,39 @@ svg {
 .directory-link.is-current:hover .directory-label {
   outline-offset: 2px;
 }
-/* A single 12px pixel arrow for every link that opens another tab. */
-.new-tab-indicator {
+/* Keep the link underline on its label, separate from the pixel icon. */
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+  text-decoration: none;
+}
+.icon-link .link-label {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.icon-link:hover .link-label {
+  text-decoration-thickness: 2px;
+}
+.new-tab-indicator,
+.up-indicator {
   display: inline-block;
   width: 12px;
   height: 12px;
   flex: 0 0 12px;
-  margin-left: 4px;
-  vertical-align: 8px;
   font-size: 0;
   background: currentColor;
-  mask: url("assets/new-tab.svg") center / 12px 12px no-repeat;
+  transform: translateY(1px);
+}
+.new-tab-indicator {
+  mask: url("assets/new-tab.svg?v=2") center / 12px 12px no-repeat;
+}
+.up-indicator {
+  mask: url("assets/up-arrow.svg") center / 12px 12px no-repeat;
 }
 .directory-link .new-tab-indicator {
   margin-left: auto;
-}
-.site-footer .new-tab-indicator,
-.pending-value .new-tab-indicator {
-  vertical-align: 6px;
 }
 .directory-divider {
   border-top: 1px dotted #888;
@@ -382,6 +397,16 @@ svg {
 .pending-value {
   color: #666;
   font-size: var(--small-size);
+}
+.page-error {
+  display: flow-root;
+}
+.error-page {
+  width: min(480px, calc(100% - 32px));
+  margin: 40px auto;
+}
+.error-page h1 {
+  margin-bottom: 16px;
 }
 @media (max-width: 1000px) {
   .desktop {

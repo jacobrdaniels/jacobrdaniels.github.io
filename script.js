@@ -21,6 +21,11 @@ function contactLink(container, href, label, newTab = false) {
   a.href = href;
   a.textContent = label;
   if (newTab) {
+    a.className = "icon-link";
+    const text = document.createElement("span");
+    text.className = "link-label";
+    text.textContent = label;
+    a.replaceChildren(text);
     a.target = "_blank";
     a.rel = "noopener";
     a.title = "Opens in a new tab";
