@@ -555,3 +555,18 @@ svg {
     break-inside: avoid;
   }
 }
+
+@media (max-width: 580px) {
+  .directory-link[target="_blank"] {
+    gap: 5px;
+  }
+  .directory-link[target="_blank"] .directory-label {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 24px;
+  }
+  .directory-link .new-tab-indicator {
+    display: inline;
+    font-size: 13px;
+  }
+}

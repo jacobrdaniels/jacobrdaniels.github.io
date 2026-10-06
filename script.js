@@ -16,10 +16,20 @@ if (PROFILE.location.trim()) {
     el.closest(".location-line").hidden = false;
   }
 }
-function contactLink(container, href, label) {
+function contactLink(container, href, label, newTab = false) {
   const a = document.createElement("a");
   a.href = href;
   a.textContent = label;
+  if (newTab) {
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.title = "Opens in a new tab";
+    a.setAttribute("aria-label", label + " (opens in a new tab)");
+    const indicator = document.createElement("span");
+    indicator.setAttribute("aria-hidden", "true");
+    indicator.textContent = " ↗";
+    a.append(indicator);
+  }
   container.replaceChildren(a);
 }
 if (PROFILE.email.trim()) {
@@ -37,10 +47,8 @@ if (PROFILE.linkedin.trim()) {
     ) {
       for (const a of document.querySelectorAll("[data-linkedin-nav]"))
         a.href = url.href;
-      for (const el of document.querySelectorAll("[data-linkedin-pending]"))
-        el.hidden = true;
       for (const el of document.querySelectorAll("[data-linkedin-value]"))
-        contactLink(el, url.href, "View my LinkedIn profile ↗");
+        contactLink(el, url.href, "LinkedIn profile", true);
     }
   } catch {
     /* Keep placeholders if the profile URL is incomplete. */
