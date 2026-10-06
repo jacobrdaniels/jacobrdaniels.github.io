@@ -1,6 +1,13 @@
 @font-face {
-  font-family: Silkscreen;
-  src: url("assets/fonts/silkscreen.woff2") format("woff2");
+  font-family: "Sysfont";
+  src: url("assets/fonts/sysfont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FindersKeepers";
+  src: url("assets/fonts/FindersKeepers.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -9,8 +16,8 @@
 :root {
   color: #171717;
   background: #c6c6c6;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 28px;
   font-synthesis: none;
 }
 * {
@@ -39,7 +46,7 @@ a:focus-visible {
 }
 p {
   margin: 0 0 16px;
-  line-height: 1.65;
+  line-height: 1.15;
 }
 h1,
 h2,
@@ -50,19 +57,19 @@ dd {
   margin: 0;
 }
 h1 {
-  font-family: Silkscreen, monospace;
+  font-family: "Sysfont", Geneva, sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 1.15;
-  letter-spacing: -1.7px;
+  letter-spacing: normal;
   margin-bottom: 22px;
 }
 h2 {
-  font-size: 19px;
+  font-size: 30px;
   line-height: 1.3;
 }
 h3 {
-  font-size: 17px;
+  font-size: 28px;
   line-height: 1.35;
 }
 svg {
@@ -103,7 +110,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 13px;
-  font-weight: bold;
+  font-weight: 400;
   text-decoration: none;
 }
 .menu-icon {
@@ -111,8 +118,8 @@ svg {
   height: 21px;
 }
 .desktop-label {
-  font-family: "Courier New", monospace;
-  font-size: 12px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
 }
 .desktop {
   max-width: 1164px;
@@ -150,9 +157,9 @@ svg {
 .window-title {
   background: white;
   padding: 2px 10px 4px;
-  font-family: Silkscreen, monospace;
+  font-family: "Sysfont", Geneva, sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 24px;
   line-height: 1.4;
 }
 .window-box,
@@ -185,7 +192,7 @@ svg {
   gap: 9px;
   padding: 13px 15px 14px;
   border-bottom: 1px solid #111;
-  font-size: 12px;
+  font-size: 24px;
 }
 .disk-icon {
   width: 22px;
@@ -210,8 +217,8 @@ svg {
 }
 .directory-label {
   padding: 3px 4px;
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 28px;
 }
 .is-current .directory-label {
   background: #111;
@@ -225,27 +232,27 @@ svg {
 }
 .nav-arrow {
   margin-left: auto;
-  font-size: 18px;
+  font-size: 30px;
 }
 .nav-aside {
   margin-left: auto;
   color: #595959;
-  font-family: "Courier New", monospace;
-  font-size: 11px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
 }
 .directory-divider {
   border-top: 1px dotted #777;
   margin: 12px 5px 4px;
   padding-top: 12px;
   color: #595959;
-  font-family: "Courier New", monospace;
-  font-size: 11px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
 }
 .directory-caption {
   margin: 20px 5px;
-  font-family: "Courier New", monospace;
-  font-size: 11px;
-  line-height: 1.7;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.1;
 }
 .document-column {
   min-width: 0;
@@ -257,14 +264,14 @@ svg {
   padding: 33px 34px 29px;
 }
 .document-label {
-  font-family: "Courier New", monospace;
-  font-size: 11px;
-  letter-spacing: 0.3px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
+  letter-spacing: normal;
   margin-bottom: 18px;
 }
 .lead {
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 30px;
+  line-height: 1.15;
 }
 .home-intro {
   display: grid;
@@ -273,7 +280,7 @@ svg {
   align-items: start;
 }
 .welcome-copy > p:not(.lead):not(.document-label):not(.location-line) {
-  font-size: 14px;
+  font-size: 28px;
 }
 .portrait-window {
   margin-top: 3px;
@@ -284,8 +291,8 @@ svg {
 }
 .photo-title {
   text-align: center;
-  font-family: Silkscreen, monospace;
-  font-size: 11px;
+  font-family: "Sysfont", Geneva, sans-serif;
+  font-size: 24px;
   border-bottom: 1px solid;
   padding: 2px 0 5px;
   margin-bottom: 3px;
@@ -297,14 +304,14 @@ svg {
 }
 .portrait-window figcaption {
   padding: 8px 5px 5px;
-  font-family: "Courier New", monospace;
-  font-size: 11px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
 }
 .location-line {
   display: flex;
   gap: 8px;
   align-items: center;
-  font-size: 12px;
+  font-size: 24px;
   color: #555;
   margin-top: 20px;
 }
@@ -318,7 +325,7 @@ svg {
   padding-top: 20px;
 }
 .home-index h2 {
-  font-size: 17px;
+  font-size: 28px;
   margin-bottom: 11px;
 }
 .home-index dl > div {
@@ -327,11 +334,11 @@ svg {
   gap: 16px;
   border-bottom: 1px dotted #999;
   padding: 13px 0;
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 26px;
+  line-height: 1.15;
 }
 .home-index dt {
-  font-weight: bold;
+  font-weight: 400;
 }
 .home-index a {
   text-decoration: none;
@@ -344,8 +351,8 @@ svg {
   justify-content: space-between;
   gap: 16px;
   padding: 17px 2px 0;
-  font-family: "Courier New", monospace;
-  font-size: 10px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 22px;
 }
 .document-heading {
   border-bottom: 2px solid;
@@ -367,7 +374,7 @@ svg {
 }
 .prose-section p,
 .project-entry > p {
-  font-size: 14px;
+  font-size: 28px;
 }
 .section-rule {
   display: flex;
@@ -378,8 +385,8 @@ svg {
   border-bottom: 1px solid;
 }
 .section-rule > span {
-  font-family: "Courier New", monospace;
-  font-size: 11px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
 }
 .experience {
   display: grid;
@@ -397,12 +404,12 @@ svg {
 }
 .experience p:last-child {
   margin-bottom: 0;
-  font-size: 13px;
+  font-size: 26px;
 }
 .entry-meta {
-  font-family: "Courier New", monospace;
-  font-size: 11px;
-  line-height: 1.6;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.15;
   margin-bottom: 4px;
   color: #555;
 }
@@ -423,14 +430,14 @@ svg {
   height: 35px;
 }
 .image-placeholder figcaption {
-  font-family: "Courier New", monospace;
-  font-size: 11px;
-  line-height: 1.5;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.15;
 }
 .image-placeholder small {
   display: block;
   color: #666;
-  font-size: 10px;
+  font-size: 22px;
   margin-top: 3px;
 }
 .project-index {
@@ -439,11 +446,11 @@ svg {
   gap: 12px 24px;
   flex-wrap: wrap;
   padding-bottom: 24px;
-  font-size: 12px;
+  font-size: 24px;
 }
 .project-index > span {
-  font-family: "Courier New", monospace;
-  font-size: 11px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
 }
 .project-entry {
   scroll-margin-top: 24px;
@@ -459,11 +466,11 @@ svg {
 .entry-number {
   border: 1px solid;
   padding: 5px;
-  font-family: Silkscreen, monospace;
-  font-size: 13px;
+  font-family: "Sysfont", Geneva, sans-serif;
+  font-size: 26px;
 }
 .project-entry h2 {
-  font-size: 24px;
+  font-size: 30px;
 }
 .draft-note {
   color: #595959;
@@ -482,7 +489,7 @@ svg {
   display: inline-flex;
   gap: 9px;
   align-items: center;
-  font-size: 12px;
+  font-size: 24px;
 }
 .inline-icon {
   width: 22px;
@@ -501,18 +508,18 @@ svg {
   scroll-margin-top: 25px;
 }
 .contact-list dt {
-  font-weight: bold;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 28px;
   margin-bottom: 6px;
 }
 .contact-list dd {
-  font-size: 13px;
+  font-size: 26px;
   overflow-wrap: anywhere;
 }
 .pending-value {
   color: #666;
-  font-family: "Courier New", monospace;
-  font-size: 12px;
+  font-family: "FindersKeepers", Geneva, Arial, sans-serif;
+  font-size: 24px;
 }
 
 @media (min-width: 1250px) {
@@ -536,7 +543,7 @@ svg {
     font-size: 32px;
   }
   .lead {
-    font-size: 16px;
+    font-size: 28px;
   }
   .home-index dl > div {
     grid-template-columns: 140px 1fr;
@@ -558,14 +565,14 @@ svg {
     padding-right: 2px;
   }
   .directory-label {
-    font-size: 13px;
+    font-size: 26px;
   }
   .disk-name {
     padding: 13px 8px;
-    font-size: 11px;
+    font-size: 24px;
   }
   .nav-aside {
-    font-size: 9px;
+    font-size: 20px;
   }
   .home-intro {
     grid-template-columns: 1fr;
@@ -596,10 +603,10 @@ svg {
     padding: 7px 16px;
   }
   .desktop-label {
-    font-size: 10px;
+    font-size: 22px;
   }
   .site-name {
-    font-size: 13px;
+    font-size: 26px;
     gap: 9px;
   }
   .desktop {
@@ -626,13 +633,13 @@ svg {
     gap: 10px;
   }
   .directory-label {
-    font-size: 13px;
+    font-size: 26px;
   }
   .directory-divider {
     grid-column: 1 / -1;
     margin: 7px 1px 3px;
     padding-top: 8px;
-    font-size: 10px;
+    font-size: 22px;
   }
   .nav-aside,
   .directory-link .nav-arrow {
@@ -675,7 +682,7 @@ svg {
     gap: 12px;
   }
   .project-entry h2 {
-    font-size: 21px;
+    font-size: 28px;
   }
   .contact-list > div {
     padding: 22px 0;
@@ -709,5 +716,109 @@ svg {
   .project-entry,
   .experience {
     break-inside: avoid;
+  }
+}
+
+.site-name,
+h2,
+h3 {
+  font-family: "Sysfont", Geneva, sans-serif;
+  font-weight: 400;
+}
+.site-name {
+  font-size: 17px;
+}
+h2 {
+  font-size: 22px;
+}
+h3 {
+  font-size: 20px;
+}
+.window-title {
+  font-size: 16px;
+  line-height: 1.2;
+  padding-bottom: 3px;
+}
+.photo-title {
+  font-size: 15px;
+}
+.entry-number {
+  font-size: 18px;
+}
+.home-index h2 {
+  font-size: 21px;
+}
+.project-entry h2 {
+  font-size: 25px;
+}
+.directory-label {
+  font-size: 28px;
+  line-height: 1;
+}
+.disk-name {
+  font-size: 23px;
+}
+.desktop-label {
+  font-size: 23px;
+}
+.site-footer {
+  align-items: baseline;
+  flex-wrap: wrap;
+  font-size: 22px;
+  gap: 8px 16px;
+}
+.site-footer .font-credits-link {
+  margin-left: auto;
+}
+.credits-entry + .credits-entry {
+  margin-top: 30px;
+}
+.credits-entry h2 {
+  margin-bottom: 10px;
+}
+.credits-entry a {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 780px) {
+  .directory-link {
+    gap: 4px;
+  }
+  .directory-label {
+    font-size: 24px;
+  }
+  .nav-aside {
+    display: none;
+  }
+}
+@media (max-width: 580px) {
+  .site-name {
+    font-size: 15px;
+  }
+  .desktop-label {
+    font-size: 20px;
+  }
+  .directory-label {
+    font-size: 26px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .site-footer {
+    font-size: 20px;
+  }
+}
+
+.home-index dl > div {
+  grid-template-columns: 170px 1fr;
+}
+.home-index a span,
+.repository-link span,
+.contact-list dd span[aria-hidden] {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+@media (max-width: 780px) {
+  .home-index dl > div {
+    grid-template-columns: 1fr;
   }
 }
