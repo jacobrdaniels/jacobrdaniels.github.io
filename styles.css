@@ -13,8 +13,11 @@
   font-display: swap;
 }
 :root {
+  --desktop-gap: 40px;
   color: #171717;
   background: #c6c6c6;
+  background-image: radial-gradient(#888 0.65px, transparent 0.65px);
+  background-size: 3px 3px;
   font-family: "FindersKeepers", Geneva, Arial, sans-serif;
   font-size: 28px;
   font-synthesis: none;
@@ -25,8 +28,6 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-image: radial-gradient(#888 0.65px, transparent 0.65px);
-  background-size: 3px 3px;
 }
 a {
   color: inherit;
@@ -95,8 +96,8 @@ svg {
 }
 .desktop {
   max-width: 1164px;
-  margin: 40px auto 0;
-  padding: 0 24px 28px;
+  margin: 0 auto;
+  padding: var(--desktop-gap) 24px 28px;
   display: grid;
   grid-template-columns: 222px minmax(0, 1fr);
   gap: 30px;
@@ -217,6 +218,9 @@ svg {
 }
 .document-column {
   min-width: 0;
+}
+.document-window {
+  scroll-margin-top: var(--desktop-gap);
 }
 .document-window:focus {
   outline: none;
@@ -394,7 +398,7 @@ svg {
   .desktop {
     grid-template-columns: 198px minmax(0, 1fr);
     gap: 24px;
-    margin-top: 28px;
+    --desktop-gap: 28px;
   }
   .document-body {
     padding: 24px;
@@ -415,7 +419,7 @@ svg {
 }
 @media (max-width: 780px) {
   .desktop {
-    padding: 0 20px 24px;
+    padding: var(--desktop-gap) 20px 24px;
     grid-template-columns: 170px minmax(0, 1fr);
     gap: 20px;
   }
@@ -452,8 +456,8 @@ svg {
 @media (max-width: 580px) {
   .desktop {
     display: block;
-    margin-top: 18px;
-    padding: 0 15px 22px;
+    --desktop-gap: 18px;
+    padding: var(--desktop-gap) 15px 22px;
   }
   .directory-column {
     position: static;
@@ -518,6 +522,7 @@ svg {
   }
 }
 @media print {
+  :root,
   body {
     background: white;
   }
