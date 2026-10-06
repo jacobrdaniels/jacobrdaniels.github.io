@@ -215,7 +215,7 @@ function renderSpecimen() {
   const world = document.querySelector(".world");
   world.classList.add(`theme-${s.id}`);
   document.querySelector("#browser-bar").innerHTML =
-    `<a class="back-to-gallery" href="./"><span aria-hidden="true">←</span> All eight<span class="bar-wordmark"> / EIGHT</span></a><div class="style-picker"><label for="style-select">${String(index + 1).padStart(2, "0")} / 08</label><select id="style-select" aria-label="Choose a style">${STYLES.map((t) => `<option value="${t.id}" ${t.id === s.id ? "selected" : ""}>${t.name}</option>`).join("")}</select></div><nav class="style-pagination" aria-label="Browse styles"><a href="specimen.html?style=${STYLES[(index + 7) % 8].id}" aria-label="Previous style">←</a><a href="specimen.html?style=${STYLES[(index + 1) % 8].id}" aria-label="Next style">→</a></nav>`;
+    `<a class="back-to-gallery" href="index.html"><span aria-hidden="true">←</span> All eight<span class="bar-wordmark"> / EIGHT</span></a><div class="style-picker"><label for="style-select">${String(index + 1).padStart(2, "0")} / 08</label><select id="style-select" aria-label="Choose a style">${STYLES.map((t) => `<option value="${t.id}" ${t.id === s.id ? "selected" : ""}>${t.name}</option>`).join("")}</select></div><nav class="style-pagination" aria-label="Browse styles"><a href="specimen.html?style=${STYLES[(index + 7) % 8].id}" aria-label="Previous style">←</a><a href="specimen.html?style=${STYLES[(index + 1) % 8].id}" aria-label="Next style">→</a></nav>`;
   world.innerHTML = specimenContent(s, index);
   document.querySelector("#style-select").addEventListener("change", (e) => {
     location.href = `specimen.html?style=${e.target.value}`;
