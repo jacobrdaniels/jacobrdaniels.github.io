@@ -5,7 +5,7 @@ A static personal website inspired by the original Macintosh: an icon directory,
 ## Pages and content
 
 - `index.html`: welcome and portrait.
-- `about.html`: background, personal story, and three experience placeholders.
+- `about.html`: background, personal story, and internships at Safran and Attollo Engineering.
 - `projects.html`: a long project document, currently starting with the poker bot and ResNet / CIFAR-10 repositories.
 - `contact.html`: contact details and GitHub.
 - `styles.css`: shared Macintosh layout, responsive styles, and print styles.
@@ -13,7 +13,9 @@ A static personal website inspired by the original Macintosh: an icon directory,
 
 Edit the page HTML directly to replace the placeholder text and images. Set `email`, `linkedin`, and `location` in `PROFILE` at the top of `script.js` when ready. Until then, LinkedIn opens its placeholder on Contact and no email address is invented. The core navigation works without JavaScript.
 
-The portrait is the supplied original in `assets/jacob-portrait.jpg`. Fonts and artwork are local. Sysfont by Alina Sava (SIL OFL 1.1) provides the Chicago-style interface lettering; FindersKeepers by Giles Booth (Creative Commons Attribution, version unspecified by its publication page) provides Geneva-style body text. Both supplied font files are unmodified. Attribution, source links, and license records are available in `attributions.txt` and `assets/fonts/`. The original Sysfont license and readme are preserved exactly as supplied.
+The portrait is the supplied original in `assets/jacob-portrait.jpg`. Fonts and artwork are local. Sysfont by Alina Sava (SIL OFL 1.1) provides the Chicago-style interface lettering; Geneva 9.2 by Techstar01, based on Kelsey Higham's Geneva recreations (Creative Commons Attribution Share Alike 3.0), provides the pixel Geneva body text. Both supplied font files are unmodified. Attribution, source links, and license records are available in `attributions.txt` and `assets/fonts/`. The original Sysfont and Geneva 9.2 licenses and readmes are preserved exactly as supplied. Geneva 9.2 uses a 16-unit pixel grid: body text and labels default to 32px. The small `pixel-text.js` enhancement chooses the nearest whole physical-pixel size using the display pixel ratio and nudges text origins onto that grid. It responds to viewport and resolution changes, font loading, and page reflow. Text remains selectable, browser zoom remains available, and printing and JavaScript-disabled browsing retain the static default. Text sizes and line wrapping change in steps during zoom; browser rounding and smoothing can still soften edges.
+
+Experience logos use the supplied originals in `assets/safran-logo.png` and `assets/attollo-logo.webp`. The SVG view boxes in `about.html` crop them to their symbols while preserving the original artwork and colors.
 
 ## Local preview
 

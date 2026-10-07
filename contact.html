@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preload" href="/assets/fonts/sysfont.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/assets/fonts/FindersKeepers.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/geneva-9-2/geneva-9-2.otf" as="font" type="font/otf" crossorigin />
     <meta
       name="description"
       content="Contact - Jacob Daniels, computer science student at Texas A&M."
@@ -13,11 +13,12 @@
     <title>Contact - Jacob Daniels</title>
     <link
       rel="icon"
-      href="assets/favicon.svg?v=personal-1"
+      href="assets/favicon.svg?v=1"
       type="image/svg+xml"
     />
-    <link rel="stylesheet" href="styles.css?v=personal-11" />
-    <script src="script.js?v=personal-10" defer></script>
+    <link rel="stylesheet" href="styles.css?v=18" />
+    <script src="script.js?v=10" defer></script>
+    <script src="pixel-text.js?v=2" defer></script>
   </head>
   <body tabindex="-1" id="top" class="page-contact">
     <a class="skip-link" href="#content">Skip to content</a>
@@ -29,7 +30,7 @@
           </div>
           <ul class="directory-list">
             <li>
-              <a class="directory-link" href="index.html?v=personal-10"
+              <a class="directory-link" href="index.html"
                 ><svg
                   class="pixel-icon"
                   viewBox="0 0 32 32"
@@ -46,7 +47,7 @@
               >
             </li>
             <li>
-              <a class="directory-link" href="about.html?v=personal-10"
+              <a class="directory-link" href="about.html"
                 ><svg
                   class="pixel-icon"
                   viewBox="0 0 32 32"
@@ -64,7 +65,7 @@
               >
             </li>
             <li>
-              <a class="directory-link" href="projects.html?v=personal-10"
+              <a class="directory-link" href="projects.html"
                 ><svg
                   class="pixel-icon"
                   viewBox="0 0 32 32"
@@ -84,7 +85,7 @@
             <li>
               <a
                 class="directory-link is-current"
-                href="contact.html?v=personal-10"
+                href="contact.html"
                 aria-current="page"
                 ><svg
                   class="pixel-icon"
@@ -109,7 +110,7 @@
             <li>
               <a
                 class="directory-link"
-                href="contact.html?v=personal-10#linkedin"
+                href="contact.html#linkedin"
                 data-linkedin-nav
                 target="_blank"
                 rel="noopener"
@@ -173,7 +174,7 @@
             <h1 class="window-title" id="page-heading">Contact</h1>
           </div>
           <div class="document-body">
-            <dl class="contact-list">
+            <div class="contact-list">
               <div id="email">
                 <svg
                   class="pixel-icon"
@@ -191,12 +192,12 @@
                     stroke-width="2"
                   />
                 </svg>
-                <div>
+                <dl>
                   <dt>Email</dt>
                   <dd data-email-value>
                     <span class="pending-value">Email address to come</span>
                   </dd>
-                </div>
+                </dl>
               </div>
               <div id="linkedin">
                 <svg
@@ -212,19 +213,19 @@
                     d="M10 8h3v3h-3zM10 13h3v10h-3zM16 13h3v1h4v9h-3v-7h-1v7h-3z"
                   />
                 </svg>
-                <div>
+                <dl>
                   <dt>LinkedIn</dt>
                   <dd data-linkedin-value>
                     <a
                       class="icon-link pending-value"
-                      href="contact.html?v=personal-10#linkedin"
+                      href="contact.html#linkedin"
                       target="_blank"
                       rel="noopener"
                       title="Opens in a new tab"
                       aria-label="LinkedIn placeholder (opens in a new tab)"
                       ><span class="link-label">Profile link to come</span><span class="new-tab-indicator" aria-hidden="true">↗</span></a>
                   </dd>
-                </div>
+                </dl>
               </div>
               <div>
                 <svg
@@ -240,7 +241,7 @@
                     d="M9 7h5v5H9zM9 20h5v5H9zM18 7h5v5h-5zM10 12h2v8h-2zM19 12h2v4h-2zM12 15h7v2h-7z"
                   />
                 </svg>
-                <div>
+                <dl>
                   <dt>GitHub</dt>
                   <dd>
                     <a
@@ -251,9 +252,9 @@
                       aria-label="GitHub (opens in a new tab)"
                        class="icon-link"><span class="link-label">jacobrdaniels</span><span class="new-tab-indicator" aria-hidden="true">↗</span></a>
                   </dd>
-                </div>
+                </dl>
               </div>
-            </dl>
+            </div>
           </div>
         </main>
         <footer class="site-footer">

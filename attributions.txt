@@ -3,9 +3,15 @@ SIL Open Font License 1.1
 https://fontsarena.com/sysfont-by-alina-sava/
 https://jacobrdaniels.github.io/assets/fonts/sysfont-OFL.txt
 
-FindersKeepers - Giles Booth
+Geneva 9.2 - Techstar01, based on Geneva 9.1 and Geneva 9 by Kelsey Higham
+Creative Commons Attribution Share Alike 3.0
+https://fontstruct.com/fontstructions/show/1744455
+https://creativecommons.org/licenses/by-sa/3.0/
+Original license and readme: assets/fonts/geneva-9-2/
+
+Archived font: FindersKeepers - Giles Booth
 Creative Commons Attribution
 https://www.pentacom.jp/pentacom/bitfontmaker2/gallery/?id=3809
 
 Original Chicago and Geneva typefaces: Susan Kare.
-Both font files are used unchanged.
+All supplied font files are preserved unchanged.

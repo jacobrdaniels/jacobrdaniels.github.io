@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preload" href="/assets/fonts/sysfont.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/assets/fonts/FindersKeepers.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/assets/fonts/geneva-9-2/geneva-9-2.otf" as="font" type="font/otf" crossorigin />
     <meta
       name="description"
       content="About - Jacob Daniels, computer science student at Texas A&M."
@@ -13,11 +13,12 @@
     <title>About - Jacob Daniels</title>
     <link
       rel="icon"
-      href="assets/favicon.svg?v=personal-1"
+      href="assets/favicon.svg?v=1"
       type="image/svg+xml"
     />
-    <link rel="stylesheet" href="styles.css?v=personal-11" />
-    <script src="script.js?v=personal-10" defer></script>
+    <link rel="stylesheet" href="styles.css?v=18" />
+    <script src="script.js?v=10" defer></script>
+    <script src="pixel-text.js?v=2" defer></script>
   </head>
   <body tabindex="-1" id="top" class="page-about">
     <a class="skip-link" href="#content">Skip to content</a>
@@ -29,7 +30,7 @@
           </div>
           <ul class="directory-list">
             <li>
-              <a class="directory-link" href="index.html?v=personal-10"
+              <a class="directory-link" href="index.html"
                 ><svg
                   class="pixel-icon"
                   viewBox="0 0 32 32"
@@ -48,7 +49,7 @@
             <li>
               <a
                 class="directory-link is-current"
-                href="about.html?v=personal-10"
+                href="about.html"
                 aria-current="page"
                 ><svg
                   class="pixel-icon"
@@ -68,7 +69,7 @@
               >
             </li>
             <li>
-              <a class="directory-link" href="projects.html?v=personal-10"
+              <a class="directory-link" href="projects.html"
                 ><svg
                   class="pixel-icon"
                   viewBox="0 0 32 32"
@@ -86,7 +87,7 @@
               >
             </li>
             <li>
-              <a class="directory-link" href="contact.html?v=personal-10"
+              <a class="directory-link" href="contact.html"
                 ><svg
                   class="pixel-icon"
                   viewBox="0 0 32 32"
@@ -109,7 +110,7 @@
             <li>
               <a
                 class="directory-link"
-                href="contact.html?v=personal-10#linkedin"
+                href="contact.html#linkedin"
                 data-linkedin-nav
                 target="_blank"
                 rel="noopener"
@@ -188,101 +189,40 @@
                 <h2 id="experience-heading">Experience</h2>
               </div>
               <article class="experience">
-                <figure
-                  class="image-placeholder"
+                <svg
+                  class="experience-logo"
+                  viewBox="386 386 733 811"
                   role="img"
-                  aria-label="Experience photo placeholder"
+                  aria-label="Safran blue S logo"
+                  focusable="false"
                 >
-                  <svg
-                    viewBox="0 0 48 40"
-                    aria-hidden="true"
-                    shape-rendering="crispEdges"
-                  >
-                    <path
-                      d="M1 1h46v38H1z"
-                      fill="white"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    />
-                    <path d="m5 33 12-15 9 11 7-8 10 12Z" fill="currentColor" />
-                    <path d="M31 7h7v7h-7z" fill="currentColor" />
-                  </svg>
-                  <figcaption>
-                    Experience photo<small>Image to come</small>
-                  </figcaption>
-                </figure>
+                  <image href="assets/safran-logo.png" width="4616" height="1583" />
+                </svg>
                 <div>
-                  <p class="entry-meta">Organization · Dates</p>
-                  <h3>Experience 01</h3>
+                  <p class="entry-meta">Safran · May–August 2026</p>
+                  <h3>Software Engineer Intern</h3>
                   <p>
-                    A short account of the work, the people involved, and what I
-                    learned will go here.
+                    Built Android and embedded software for device control,
+                    and automated laser testing.
                   </p>
                 </div>
               </article>
               <article class="experience">
-                <figure
-                  class="image-placeholder"
+                <svg
+                  class="experience-logo"
+                  viewBox="133 23 354 264"
                   role="img"
-                  aria-label="Experience photo placeholder"
+                  aria-label="Attollo Engineering blue chevron logo"
+                  focusable="false"
                 >
-                  <svg
-                    viewBox="0 0 48 40"
-                    aria-hidden="true"
-                    shape-rendering="crispEdges"
-                  >
-                    <path
-                      d="M1 1h46v38H1z"
-                      fill="white"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    />
-                    <path d="m5 33 12-15 9 11 7-8 10 12Z" fill="currentColor" />
-                    <path d="M31 7h7v7h-7z" fill="currentColor" />
-                  </svg>
-                  <figcaption>
-                    Experience photo<small>Image to come</small>
-                  </figcaption>
-                </figure>
+                  <image href="assets/attollo-logo.webp" width="600" height="466" />
+                </svg>
                 <div>
-                  <p class="entry-meta">Organization · Dates</p>
-                  <h3>Experience 02</h3>
+                  <p class="entry-meta">Attollo Engineering · May–August 2025</p>
+                  <h3>Software Engineer Intern</h3>
                   <p>
-                    Room for another part of the story: a role, a class, a team,
-                    or something worth remembering.
-                  </p>
-                </div>
-              </article>
-              <article class="experience">
-                <figure
-                  class="image-placeholder"
-                  role="img"
-                  aria-label="Experience photo placeholder"
-                >
-                  <svg
-                    viewBox="0 0 48 40"
-                    aria-hidden="true"
-                    shape-rendering="crispEdges"
-                  >
-                    <path
-                      d="M1 1h46v38H1z"
-                      fill="white"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    />
-                    <path d="m5 33 12-15 9 11 7-8 10 12Z" fill="currentColor" />
-                    <path d="M31 7h7v7h-7z" fill="currentColor" />
-                  </svg>
-                  <figcaption>
-                    Experience photo<small>Image to come</small>
-                  </figcaption>
-                </figure>
-                <div>
-                  <p class="entry-meta">Organization · Dates</p>
-                  <h3>Experience 03</h3>
-                  <p>
-                    Another experience, with a photograph and a few notes about
-                    what made it matter.
+                    Built embedded C++ software for a laser rangefinder,
+                    combining sensor data to compensate for hand jitter.
                   </p>
                 </div>
               </article>
