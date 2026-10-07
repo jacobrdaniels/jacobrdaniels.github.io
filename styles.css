@@ -13,6 +13,8 @@
   font-display: swap;
 }
 :root {
+  /* Keep short and scrolling pages aligned. */
+  scrollbar-gutter: stable;
   --desktop-gap: 40px;
   /* FindersKeepers uses a 16-unit pixel grid; 32px gives 2px body pixels. */
   --body-size: 32px;
