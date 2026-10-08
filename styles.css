@@ -264,6 +264,11 @@ svg {
 .welcome-copy p:last-child {
   margin-bottom: 0;
 }
+/* Gold and orange are deepened for readable text on white. */
+.welcome-copy .text-tamu { color: #500000; }
+.welcome-copy .text-python { color: #916d00; }
+.welcome-copy .text-sublime { color: #b45b00; }
+.welcome-copy .text-spring { color: #387d32; }
 .portrait-window {
   border: 1px solid #111;
   padding: 3px;
