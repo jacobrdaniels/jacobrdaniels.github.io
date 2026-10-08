@@ -454,6 +454,26 @@ svg {
   font-size: var(--body-size);
   overflow-wrap: anywhere;
 }
+.contact-list dl {
+  min-width: 0;
+}
+.email-reveal {
+  font: inherit;
+  color: inherit;
+  line-height: 1;
+  padding: 4px 10px;
+  background: white;
+  border: 1px solid #111;
+  box-shadow: 2px 2px 0 #111;
+  cursor: pointer;
+}
+.email-reveal:active {
+  box-shadow: none;
+}
+.email-reveal:focus-visible {
+  outline: 2px dotted #111;
+  outline-offset: 4px;
+}
 .pending-value {
   color: #666;
   font-size: var(--small-size);

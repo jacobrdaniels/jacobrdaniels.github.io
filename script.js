@@ -1,9 +1,8 @@
 "use strict";
 
-// Add real details here when ready. Blank values preserve the visible placeholders.
+// Encoding and click-to-reveal deter basic harvesting, not determined bots.
 const PROFILE = {
-  email: "",
-  linkedin: "",
+  emailEncoded: "amFjb2JyaWxleWRhbmllbHNAZ21haWwuY29t",
   location: "",
 };
 
@@ -16,49 +15,17 @@ if (PROFILE.location.trim()) {
     el.closest(".location-line").hidden = false;
   }
 }
-function contactLink(container, href, label, newTab = false) {
-  const a = document.createElement("a");
-  a.href = href;
-  a.textContent = label;
-  if (newTab) {
-    a.className = "icon-link";
-    const text = document.createElement("span");
-    text.className = "link-label";
-    text.textContent = label;
-    a.replaceChildren(text);
-    a.target = "_blank";
-    a.rel = "noopener";
-    a.title = "Opens in a new tab";
-    a.setAttribute("aria-label", label + " (opens in a new tab)");
-    const indicator = document.createElement("span");
-    indicator.className = "new-tab-indicator";
-    indicator.setAttribute("aria-hidden", "true");
-    indicator.textContent = " ↗";
-    a.append(indicator);
-  }
-  container.replaceChildren(a);
-}
-if (PROFILE.email.trim()) {
-  for (const el of document.querySelectorAll("[data-email-value]")) {
-    contactLink(el, "mailto:" + PROFILE.email, PROFILE.email);
-  }
-}
-if (PROFILE.linkedin.trim()) {
-  try {
-    const url = new URL(PROFILE.linkedin);
-    if (
-      url.protocol === "https:" &&
-      (url.hostname === "linkedin.com" ||
-        url.hostname.endsWith(".linkedin.com"))
-    ) {
-      for (const a of document.querySelectorAll("[data-linkedin-nav]"))
-        a.href = url.href;
-      for (const el of document.querySelectorAll("[data-linkedin-value]"))
-        contactLink(el, url.href, "LinkedIn profile", true);
-    }
-  } catch {
-    /* Keep placeholders if the profile URL is incomplete. */
-  }
+// Do not create an address or mailto link in the DOM before user interaction.
+for (const button of document.querySelectorAll("[data-email-reveal]")) {
+  button.hidden = false;
+  button.addEventListener("click", () => {
+    const address = atob(PROFILE.emailEncoded);
+    const link = document.createElement("a");
+    link.href = "mailto:" + address;
+    link.textContent = address;
+    button.closest("[data-email-value]").replaceChildren(link);
+    link.focus({ preventScroll: true });
+  }, { once: true });
 }
 
 // Return to the page origin without adding a fragment entry to browser history.

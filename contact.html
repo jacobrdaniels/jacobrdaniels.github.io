@@ -16,8 +16,8 @@
       href="assets/favicon.svg?v=1"
       type="image/svg+xml"
     />
-    <link rel="stylesheet" href="styles.css?v=21" />
-    <script src="script.js?v=10" defer></script>
+    <link rel="stylesheet" href="styles.css?v=22" />
+    <script src="script.js?v=11" defer></script>
     <script src="pixel-text.js?v=2" defer></script>
   </head>
   <body tabindex="-1" id="top" class="page-contact">
@@ -110,7 +110,7 @@
             <li>
               <a
                 class="directory-link"
-                href="contact.html#linkedin"
+                href="https://www.linkedin.com/in/jacobrdaniels/"
                 data-linkedin-nav
                 target="_blank"
                 rel="noopener"
@@ -194,8 +194,9 @@
                 </svg>
                 <dl>
                   <dt>Email</dt>
-                  <dd data-email-value>
-                    <span class="pending-value">Email address to come</span>
+                  <dd data-email-value aria-live="polite">
+                    <button type="button" class="email-reveal" data-email-reveal hidden>Show email</button>
+                    <noscript>Enable JavaScript to show my email, or use LinkedIn below.</noscript>
                   </dd>
                 </dl>
               </div>
@@ -217,13 +218,13 @@
                   <dt>LinkedIn</dt>
                   <dd data-linkedin-value>
                     <a
-                      class="icon-link pending-value"
-                      href="contact.html#linkedin"
+                      class="icon-link"
+                      href="https://www.linkedin.com/in/jacobrdaniels/"
                       target="_blank"
                       rel="noopener"
                       title="Opens in a new tab"
-                      aria-label="LinkedIn placeholder (opens in a new tab)"
-                      ><span class="link-label">Profile link to come</span><span class="new-tab-indicator" aria-hidden="true">↗</span></a>
+                      aria-label="LinkedIn profile (opens in a new tab)"
+                      ><span class="link-label">LinkedIn profile</span><span class="new-tab-indicator" aria-hidden="true">↗</span></a>
                   </dd>
                 </dl>
               </div>
