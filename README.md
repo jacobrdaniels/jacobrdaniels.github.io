@@ -7,7 +7,7 @@ A static personal website inspired by the original Macintosh: an icon directory,
 - `index.html`: welcome and portrait.
 - `about.html`: background, personal story, and internships at Safran and Attollo Engineering.
 - `projects.html`: SkyWater Pump Interface capstone, followed by Build4Good John Street Pokerbot, Skutor, and ResNet / CIFAR-10.
-- `contact.html`: click-to-reveal email, LinkedIn, and GitHub.
+- `contact.html`: click-to-reveal email and a note pointing to the social links in the sidebar.
 - `styles.css`: shared Macintosh layout, responsive styles, and print styles.
 - `script.js`: email reveal, optional location, footer year, and back-to-top behavior.
 
