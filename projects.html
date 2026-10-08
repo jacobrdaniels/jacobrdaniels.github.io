@@ -16,7 +16,7 @@
       href="assets/favicon.svg?v=1"
       type="image/svg+xml"
     />
-    <link rel="stylesheet" href="styles.css?v=19" />
+    <link rel="stylesheet" href="styles.css?v=20" />
     <script src="script.js?v=10" defer></script>
     <script src="pixel-text.js?v=2" defer></script>
   </head>
@@ -212,27 +212,28 @@
               </figure>
             </article>
             <article class="project-entry" id="poker-bot">
-              <h2>Poker bot</h2>
-              <p>A poker bot built for b4g in 2025, with Justus and Suhas.</p>
-              <figure
-                class="image-placeholder project-image"
-                aria-label="Poker bot - screenshot or diagram placeholder"
-              >
-                <svg
-                  viewBox="0 0 48 40"
-                  aria-hidden="true"
-                  shape-rendering="crispEdges"
-                >
-                  <path
-                    d="M1 1h46v38H1z"
-                    fill="white"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                  <path d="m5 33 12-15 9 11 7-8 10 12Z" fill="currentColor" />
-                  <path d="M31 7h7v7h-7z" fill="currentColor" />
-                </svg>
-                <figcaption>Image placeholder</figcaption>
+              <h2>Build4Good John Street Pokerbot</h2>
+              <p>
+                I built this poker bot with Justus and Suhas for the 2025
+                competition hosted by my university's ACM chapter. We placed third.
+              </p>
+              <p>
+                The bot estimates hand strength with Monte Carlo simulations,
+                then uses a decision tree to choose actions based on that estimate
+                and the pot odds, both before and after the flop.
+              </p>
+              <p>
+                My favorite part was building the testing suite. It let us
+                compare changes and iterate quickly.
+              </p>
+              <figure class="project-chart">
+                <img
+                  src="assets/pokerbot-earnings.png"
+                  width="333"
+                  height="222"
+                  loading="lazy"
+                  alt="Earnings chart: the orange Final line rises to roughly 36,000 while the blue allin line falls to roughly -36,000."
+                />
               </figure>
               <a
                 class="icon-link repository-link"

@@ -6,7 +6,7 @@ A static personal website inspired by the original Macintosh: an icon directory,
 
 - `index.html`: welcome and portrait.
 - `about.html`: background, personal story, and internships at Safran and Attollo Engineering.
-- `projects.html`: SkyWater Pump Interface capstone, followed by the poker bot and ResNet / CIFAR-10 repositories.
+- `projects.html`: SkyWater Pump Interface capstone, followed by Build4Good John Street Pokerbot and ResNet / CIFAR-10.
 - `contact.html`: contact details and GitHub.
 - `styles.css`: shared Macintosh layout, responsive styles, and print styles.
 - `script.js`: optional profile details and the footer year.
