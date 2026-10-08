@@ -22,8 +22,7 @@
   --title-size: 16px;
   --heading-size: 24px;
   color: #171717;
-  background: #d0d0d0 url("assets/desktop-pattern.svg") repeat;
-  background-size: 4px 4px;
+  background: #c2d3d0 url("assets/desktop-landscape.svg") center bottom / cover no-repeat fixed;
   font-family: "Geneva92", Geneva, Arial, sans-serif;
   font-size: var(--body-size);
   line-height: 1;

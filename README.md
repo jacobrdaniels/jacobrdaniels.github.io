@@ -17,6 +17,8 @@ The portrait is the supplied original in `assets/jacob-portrait.jpg`. Fonts and 
 
 Experience logos use the supplied originals in `assets/safran-logo.png` and `assets/attollo-logo.webp`. The SVG view boxes in `about.html` crop them to their symbols while preserving the original artwork and colors.
 
+The main desktop uses the Pixel landscape option from the wallpaper preview, preserved in `assets/desktop-landscape.svg`. It stays fixed behind both short and scrolling pages; print styles use a white background.
+
 ## Local preview
 
 Open `index.html` directly, or serve this directory:

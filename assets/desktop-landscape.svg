@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" shape-rendering="crispEdges">
+<defs><pattern id="grain" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="#8ca6ad" opacity=".25"/></pattern><pattern id="grass" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="#567566" opacity=".5"/></pattern></defs>
+<rect width="320" height="200" fill="#c2d3d0"/><rect width="320" height="150" fill="url(#grain)"/>
+<path d="M272 21h12v3h4v4h3v12h-3v4h-4v3h-12v-3h-4v-4h-3V28h3v-4h4z" fill="#e5c88d"/>
+<path d="M13 46h10v-3h19v3h9v4h-38zM211 67h12v-4h16v4h12v4h-40z" fill="#e6e6ce"/>
+<path d="M0 153h12v-4h12v-4h12v-5h16v-4h20v-3h24v4h16v5h12v5h16v6h20v4h20v-3h12v-5h16v-5h16v-4h20v4h16v5h16v5h16v4h12v5h16v37H0z" fill="#91a898"/>
+<path d="M0 173h20v-4h24v-3h28v3h24v5h28v6h28v3h24v-4h20v-6h20v-6h16v-6h20v-4h24v4h20v6h16v5h16v28H0z" fill="#73917b"/>
+<path d="M0 190h36v-3h36v3h28v4h64v-4h44v-4h32v3h40v5h40v6H0z" fill="#567566"/>
+<path d="M0 173h20v-4h24v-3h28v3h24v5h28v6h28v3h24v-4h20v-6h20v-6h16v-6h20v-4h24v4h20v6h16v5h16v28H0z" fill="url(#grass)"/>
+</svg>
