@@ -289,10 +289,7 @@ svg {
   gap: 8px 16px;
   padding: 17px 2px 0;
   font-size: var(--small-size);
-}
-.site-footer > * {
-  background: #d0d0d0;
-  box-shadow: 2px 0 #d0d0d0, -2px 0 #d0d0d0;
+  color: #000;
 }
 .site-footer .font-credits-link {
   margin-left: auto;
