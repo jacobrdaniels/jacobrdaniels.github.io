@@ -9,7 +9,7 @@ This source lives under `.github/telemetry` because the existing GitHub Pages ar
 - Server timestamp, event type, page, link destination and label, referrer (URL queries/fragments and credentials stripped; mailto/tel addresses omitted).
 - Raw Cloudflare client IP, approximate country/region/city/postal code/coordinates, ASN and network organization, edge location, HTTP and TLS versions, request ID.
 - User agent, available browser client hints and language headers; client-reported language, time zone, screen/viewport sizes, pixel ratio and timestamp.
-- No persistent visitor ID, tracking cookie, fingerprint hash, GPS request, or third-party IP lookup. Global Privacy Control and Do Not Track suppress collection.
+- No persistent visitor ID, tracking cookie, fingerprint hash, GPS request, or third-party IP lookup. Global Privacy Control and Do Not Track do not suppress collection.
 
 Geo data describes the IP network, not a verified location or identity. Client-supplied events are untrusted and can be forged; the Origin allowlist stops normal cross-site browser submissions but does not authenticate visitors. Referrers and events may be missing because of browser policies, blockers, navigation, or quotas.
 
@@ -25,7 +25,7 @@ Geo data describes the IP network, not a verified location or identity. Client-s
 
 ## Development and deployment
 
-Use Node.js 24.15+ with the pinned CLI version. The CLI/Vite packages are build tools only; the deployed Worker has no third-party runtime imports. Dependency overrides pin patched HTTP/image tooling. Install with `npm ci`, then `npm test`. Tests execute the deployed bundle in the Workers runtime and check authentication, session revocation/expiry, XSS escaping, validation, URL sanitization, privacy signals, daily/storage limits and cleanup.
+Use Node.js 24.15+ with the pinned CLI version. The CLI/Vite packages are build tools only; the deployed Worker has no third-party runtime imports. Dependency overrides pin patched HTTP/image tooling. Install with `npm ci`, then `npm test`. Tests execute the deployed bundle in the Workers runtime and check authentication, session revocation/expiry, XSS escaping, validation, URL sanitization, collection with privacy signals present, daily/storage limits and cleanup.
 
 The `cf` CLI is authenticated separately from Codex MCP. Run `cf auth login` if necessary. Account/database IDs in `cloudflare.config.ts` are identifiers, not secrets.
 

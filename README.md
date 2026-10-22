@@ -10,7 +10,7 @@ A static personal website inspired by the original Macintosh: an icon directory,
 - `contact.html`: click-to-reveal email and a note pointing to the social links in the sidebar.
 - `styles.css`: shared Macintosh layout, responsive styles, and print styles.
 - `script.js`: email reveal, optional location, footer year, and back-to-top behavior.
-- `telemetry.js`: lightweight page-view and link-click logging to the Cloudflare Worker, enabled only on the production hostname and respecting browser privacy signals.
+- `telemetry.js`: lightweight page-view and link-click logging to the Cloudflare Worker, enabled only on the production hostname.
 - `.github/telemetry/`: separately deployed Cloudflare Worker, private D1 log, password sign-in, tests and operations documentation. The Pages artifact excludes this directory.
 
 Edit the page HTML directly to replace the placeholder text and images. LinkedIn links are in each page's HTML. The Contact page reveals the email only after a button click; `PROFILE.emailEncoded` in `script.js` holds a Base64-encoded address. This deters basic email harvesters but is not encryption or bot verification: sophisticated scrapers can decode it. The button supports keyboard activation and moves focus to the revealed email link. Without JavaScript, Contact directs visitors to LinkedIn. Set the optional `PROFILE.location` when ready. The core navigation works without JavaScript.
@@ -41,4 +41,4 @@ The previous eight-style gallery is preserved in `style-atlas/index.html`. The s
 
 The existing `.github/workflows/static.yml` deploys the repository root to GitHub Pages when `master` is pushed. Use the explicit `index.html` URL if a browser has cached the former custom-domain redirect.
 
-The private telemetry table is at https://stats.jrdaniels.net/. The password verifier is a Cloudflare secret; no login secret is embedded in the static site. See `.github/telemetry/README.md` for limits, retention, tests, and deployment. Visitors can read the privacy note in About, linked from every page footer.
+The private telemetry table is at https://stats.jrdaniels.net/. The password verifier is a Cloudflare secret; no login secret is embedded in the static site. See `.github/telemetry/README.md` for limits, retention, tests, and deployment.

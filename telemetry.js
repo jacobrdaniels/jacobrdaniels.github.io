@@ -1,7 +1,6 @@
 "use strict";
 (() => {
   if (!["jrdaniels.net", "www.jrdaniels.net"].includes(location.hostname)) return;
-  if (navigator.globalPrivacyControl || navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
   const endpoint = "https://stats.jrdaniels.net/collect";
   let sent = 0;
   function cleanUrl(value) {

@@ -3,11 +3,11 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 const source = readFileSync(new URL("../../../telemetry.js", import.meta.url), "utf8");
-function client({ hostname = "jrdaniels.net", privacy = {}, prerendering = false } = {}) {
+function client({ hostname = "jrdaniels.net", privacy = {}, windowPrivacy = {}, prerendering = false } = {}) {
   const sent = [], listeners = {};
   class Element { closest() { return this; } hasAttribute() { return false; } }
   const document = { referrer: "https://example.org/source?private=value", prerendering, addEventListener: (name, fn) => { listeners[name] = fn; } };
-  const sandbox = { location: { hostname, href: `https://${hostname}/about.html?secret=value#story` }, navigator: { language: "en-US", ...privacy }, window: {}, document,
+  const sandbox = { location: { hostname, href: `https://${hostname}/about.html?secret=value#story` }, navigator: { language: "en-US", ...privacy }, window: windowPrivacy, document,
     screen: { width: 1920, height: 1080 }, innerWidth: 1200, innerHeight: 800, devicePixelRatio: 1.25, Element, URL, Intl, Date,
     fetch: (url, options) => { sent.push({ url, options, event: JSON.parse(options.body) }); return Promise.resolve({ status: 204 }); } };
   runInNewContext(source, sandbox);
@@ -19,10 +19,18 @@ test("client logs sanitized production page views without credentials", () => {
   assert.equal(sent[0].event.referrer, "https://example.org/source");
   assert.equal(sent[0].options.credentials, "omit"); assert.equal(sent[0].options.keepalive, true);
 });
-test("client respects privacy preferences and exact production hostnames", () => {
+test("client only logs on exact production hostnames", () => {
   for (const hostname of ["localhost", "jrdaniels.net.evil.test", "stats.jrdaniels.net"]) assert.equal(client({ hostname }).sent.length, 0);
-  assert.equal(client({ privacy: { globalPrivacyControl: true } }).sent.length, 0);
-  assert.equal(client({ privacy: { doNotTrack: "1" } }).sent.length, 0);
+});
+test("privacy signals do not suppress page views or clicks", () => {
+  for (const options of [{ privacy: { globalPrivacyControl: true } }, { privacy: { doNotTrack: "1" } }, { windowPrivacy: { doNotTrack: "1" } }]) {
+    const c = client(options);
+    assert.equal(c.sent.length, 1);
+    const link = new c.Element(); link.href = "https://example.net/"; link.textContent = "Example";
+    c.listeners.click({ type: "click", target: link, button: 0 });
+    assert.equal(c.sent.length, 2);
+    assert.equal(c.sent[1].event.kind, "click");
+  }
 });
 test("client handles keyboard clicks, middle clicks, and redacts mail addresses", () => {
   const c = client(); const link = new c.Element();

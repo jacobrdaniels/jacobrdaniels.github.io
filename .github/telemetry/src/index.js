@@ -71,7 +71,6 @@ async function collect(request, env) {
   if (!ip) return response("Missing client address", 400, cors);
   if (!(await env.GLOBAL_LIMIT.limit({ key: "collection" })).success ||
       !(await env.COLLECT_LIMIT.limit({ key: ip })).success) return response("Rate limited", 429, { ...cors, "Retry-After": "60" });
-  if (request.headers.get("Sec-GPC") === "1" || request.headers.get("DNT") === "1") return response(null, 204, cors);
   let data;
   try { data = JSON.parse(await boundedBody(request, 4096)); }
   catch { return response("Invalid event", 400, cors); }

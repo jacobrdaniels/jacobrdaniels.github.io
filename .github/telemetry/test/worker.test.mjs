@@ -44,11 +44,11 @@ test("events use trusted IP header and strip URL secrets", async () => {
   const row = await db.prepare("SELECT * FROM events ORDER BY id DESC LIMIT 1").first();
   assert.equal(row.ip, "192.0.2.12"); assert.equal(row.page, "/about.html"); assert.equal(row.referrer, "https://example.org/from"); assert.notEqual(row.ua, "spoofed");
 });
-test("GPC and Do Not Track suppress storage", async () => {
+test("GPC and Do Not Track headers do not suppress storage", async () => {
   const count = (await db.prepare("SELECT COUNT(*) AS n FROM events").first()).n;
   assert.equal((await post(fixture, { "Sec-GPC": "1" })).status, 204);
   assert.equal((await post(fixture, { DNT: "1" })).status, 204);
-  assert.equal((await db.prepare("SELECT COUNT(*) AS n FROM events").first()).n, count);
+  assert.equal((await db.prepare("SELECT COUNT(*) AS n FROM events").first()).n, count + 2);
 });
 test("login, cookie protections, escaping, filters, and logout", async () => {
   assert.equal((await signIn("wrong")).status, 401);
