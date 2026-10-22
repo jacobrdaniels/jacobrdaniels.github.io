@@ -32,8 +32,9 @@
       href="assets/favicon.svg?v=1"
       type="image/svg+xml"
     />
-    <link rel="stylesheet" href="styles.css?v=26" />
+    <link rel="stylesheet" href="styles.css?v=27" />
     <script src="script.js?v=11" defer></script>
+    <script src="telemetry.js?v=1" defer></script>
     <script src="pixel-text.js?v=2" defer></script>
   </head>
   <body tabindex="-1" id="top" class="page-about">
@@ -190,13 +191,6 @@
             <h1 class="window-title" id="page-heading">About</h1>
           </div>
           <div class="document-body">
-            <div class="about-intro">
-              <p>I'm Jacob, a computer science student at Texas A&amp;M.</p>
-              <p>
-                More about my background, interests, and life outside of
-                computer science will go here.
-              </p>
-            </div>
             <section
               class="experience-section"
               aria-labelledby="experience-heading"
@@ -243,9 +237,74 @@
                 </div>
               </article>
             </section>
+            <div class="about-intro">
+              <div class="about-story">
+                <div>
+                  <p>
+                    I got my start with programming in LEGO robotics, which I
+                    think is pretty typical.
+                  </p>
+                  <p>
+                    It feels pretty cool that something I've done as a hobby
+                    since I was around nine years old gets to be part of my career.
+                  </p>
+                </div>
+                <figure class="about-photo">
+                  <div class="portrait-window">
+                    <img
+                      src="assets/jacob-2016.jpg"
+                      width="1936"
+                      height="1288"
+                      alt="Jacob Daniels as a child, smiling outdoors."
+                    />
+                  </div>
+                  <figcaption>Me in January 2016.</figcaption>
+                </figure>
+              </div>
+              <div class="about-book">
+                <img
+                  src="assets/teach-your-kids-to-code.png"
+                  width="389"
+                  height="514"
+                  loading="lazy"
+                  alt="Cover of Teach Your Kids to Code: A Parent-Friendly Guide to Python Programming by Bryson Payne."
+                />
+                <div>
+                  <p>
+                    Back then, books were the best way for a kid like me to
+                    learn to code. I read <cite>Teach Your Kids to Code</cite>
+                    by Bryson Payne.
+                  </p>
+                  <p>
+                    I skipped the parent part and just read the book on my own.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <section id="privacy" class="about-intro" aria-labelledby="privacy-heading">
+              <div class="section-rule"><h2 id="privacy-heading">About this website &amp; privacy</h2></div>
+              <p>
+                This website is made with plain HTML, CSS, and JavaScript and
+                hosted on GitHub Pages. Its design is inspired by the original Macintosh.
+              </p>
+              <p>
+                I keep a private log of page views and link clicks using Cloudflare.
+                It includes your IP address, approximate location and network provider,
+                browser, referring website, language, time zone, and screen size.
+                URL query strings and fragments are removed. Records expire after
+                90 days, with automatic cleanup each hour and a maximum of 50,000 events.
+                Cloudflare may retain recovery backups for longer.
+              </p>
+              <p>
+                This logging uses no tracking cookies or persistent visitor IDs.
+                It respects Global Privacy Control and Do Not Track browser signals.
+                You can <a href="contact.html">contact me</a> with questions.
+              </p>
+            </section>
           </div>
         </main>
         <footer class="site-footer">
+          <a href="about.html#privacy">Privacy</a>
           <span>© <span data-year>2026</span> Jacob Daniels</span
           ><a
             class="icon-link font-credits-link"

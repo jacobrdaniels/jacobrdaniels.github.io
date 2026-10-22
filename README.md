@@ -5,17 +5,21 @@ A static personal website inspired by the original Macintosh: an icon directory,
 ## Pages and content
 
 - `index.html`: welcome and portrait.
-- `about.html`: background, personal story, and internships at Safran and Attollo Engineering.
-- `projects.html`: SkyWater Pump Interface capstone, followed by Portfolio Analyzer, Build4Good John Street Pokerbot, Skutor, and ResNet / CIFAR-10.
+- `about.html`: internships at Safran and Attollo Engineering, followed by early programming with LEGO robotics and books and a childhood photo.
+- `projects.html`: SkyWater Pump Interface capstone, followed by Portfolio Analyzer, Build4Good John Street Pokerbot, and Skutor.
 - `contact.html`: click-to-reveal email and a note pointing to the social links in the sidebar.
 - `styles.css`: shared Macintosh layout, responsive styles, and print styles.
 - `script.js`: email reveal, optional location, footer year, and back-to-top behavior.
+- `telemetry.js`: lightweight page-view and link-click logging to the Cloudflare Worker, enabled only on the production hostname and respecting browser privacy signals.
+- `.github/telemetry/`: separately deployed Cloudflare Worker, private D1 log, password sign-in, tests and operations documentation. The Pages artifact excludes this directory.
 
 Edit the page HTML directly to replace the placeholder text and images. LinkedIn links are in each page's HTML. The Contact page reveals the email only after a button click; `PROFILE.emailEncoded` in `script.js` holds a Base64-encoded address. This deters basic email harvesters but is not encryption or bot verification: sophisticated scrapers can decode it. The button supports keyboard activation and moves focus to the revealed email link. Without JavaScript, Contact directs visitors to LinkedIn. Set the optional `PROFILE.location` when ready. The core navigation works without JavaScript.
 
 The portrait is the supplied original in `assets/jacob-portrait.jpg`. Fonts and artwork are local. Sysfont by Alina Sava (SIL OFL 1.1) provides the Chicago-style interface lettering; Geneva 9.2 by Techstar01, based on Kelsey Higham's Geneva recreations (Creative Commons Attribution Share Alike 3.0), provides the pixel Geneva body text. Both supplied font files are unmodified. Attribution, source links, and license records are available in `attributions.txt` and `assets/fonts/`. The original Sysfont and Geneva 9.2 licenses and readmes are preserved exactly as supplied. Geneva 9.2 uses a 16-unit pixel grid: body text and labels default to 32px. The small `pixel-text.js` enhancement chooses the nearest whole physical-pixel size using the display pixel ratio and nudges text origins onto that grid. It responds to viewport and resolution changes, font loading, and page reflow. Text remains selectable, browser zoom remains available, and printing and JavaScript-disabled browsing retain the static default. Text sizes and line wrapping change in steps during zoom; browser rounding and smoothing can still soften edges.
 
 Experience logos use the supplied originals in `assets/safran-logo.png` and `assets/attollo-logo.webp`. The SVG view boxes in `about.html` crop them to their symbols while preserving the original artwork and colors.
+
+About includes the original childhood photo from the school Google Takeout profile in `assets/jacob-2016.jpg`; its EXIF capture date is January 23, 2016. The supplied cover of Bryson Payne's *Teach Your Kids to Code* is in `assets/teach-your-kids-to-code.png`.
 
 The main desktop uses the Pixel landscape option from the wallpaper preview, preserved in `assets/desktop-landscape.svg`. It stays fixed behind both short and scrolling pages; print styles use a white background.
 
@@ -36,3 +40,5 @@ The previous eight-style gallery is preserved in `style-atlas/index.html`. The s
 ## Deployment
 
 The existing `.github/workflows/static.yml` deploys the repository root to GitHub Pages when `master` is pushed. Use the explicit `index.html` URL if a browser has cached the former custom-domain redirect.
+
+The private telemetry table is at https://stats.jrdaniels.net/. The password verifier is a Cloudflare secret; no login secret is embedded in the static site. See `.github/telemetry/README.md` for limits, retention, tests, and deployment. Visitors can read the privacy note in About, linked from every page footer.

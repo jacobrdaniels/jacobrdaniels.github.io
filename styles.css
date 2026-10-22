@@ -295,13 +295,41 @@ svg {
   margin-left: auto;
 }
 .about-intro {
-  margin-bottom: 24px;
+  margin-top: 24px;
 }
 .about-intro p {
   font-size: var(--body-size);
 }
 .about-intro p:last-child {
   margin-bottom: 0;
+}
+.about-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 24px;
+  align-items: start;
+}
+.about-photo figcaption {
+  margin-top: 8px;
+  font-family: "Sysfont", Geneva, sans-serif;
+  font-size: var(--title-size);
+  line-height: 1.25;
+}
+.about-book {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+  margin-top: 24px;
+}
+.about-book img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #111;
+}
+.about-book cite {
+  font-style: normal;
 }
 .section-rule {
   border-bottom: 1px solid;
@@ -550,6 +578,20 @@ svg {
   .portrait-window {
     width: 215px;
   }
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .about-photo {
+    width: min(100%, 320px);
+  }
+  .about-photo .portrait-window {
+    width: 100%;
+  }
+  .about-book {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 18px;
+  }
   .experience {
     grid-template-columns: 100px minmax(0, 1fr);
     gap: 16px;
@@ -606,6 +648,13 @@ svg {
   }
   .portrait-window {
     width: min(100%, 250px);
+  }
+  .about-book {
+    grid-template-columns: 1fr;
+  }
+  .about-book img {
+    width: 150px;
+    max-width: 100%;
   }
   .experience {
     grid-template-columns: 1fr;
